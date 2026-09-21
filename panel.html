@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0f1f4a">
+<title>Riaz Mart | Admin</title>
+<style>
+  :root { --navy:#0f1f4a; --navy-2:#1b2f6b; --orange:#f47b20; --orange-soft:#fff1e6; --mist:#eef2f9; --line:#dde4f0; --muted:#5b6785; --white:#fff; --red:#b42318; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color:var(--navy); background:var(--mist); line-height:1.5; font-size:1rem; -webkit-text-size-adjust:100%; }
+  button, input, select, textarea { font: inherit; color: inherit; }
+  :focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
+  .bar { background:var(--navy); color:#fff; padding:12px 16px; display:flex; align-items:center; justify-content:space-between; gap:10px; }
+  .bar h1 { margin:0; font-size:1rem; white-space:nowrap; }
+  .bar .links { display:flex; gap:8px; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 14px 14px 90px; }
+  .btn { border:0; border-radius:10px; padding:11px 18px; font-weight:700; cursor:pointer; background:var(--navy); color:#fff; text-decoration:none; display:inline-flex; align-items:center; justify-content:center; gap:6px; }
+  .btn:hover { background:var(--navy-2); }
+  .btn.orange { background:var(--orange); color:var(--navy); }
+  .btn.ghost { background:transparent; color:inherit; border:2px solid rgba(255,255,255,.5); padding:6px 10px; font-size:.85rem; white-space:nowrap; }
+  .btn.light { background:var(--white); color:var(--navy); border:2px solid var(--line); }
+  .btn.danger { background:#fff; color:var(--red); border:2px solid #f3c9c5; }
+  .btn.small { padding:7px 14px; font-size:.9rem; }
+  .btn:disabled { opacity:.55; cursor:not-allowed; }
+  .card { background:#fff; border:1px solid var(--line); border-radius:14px; padding:16px; margin-bottom:12px; }
+  .tabs { display:flex; gap:6px; background:#fff; padding:8px; position:sticky; top:0; z-index:5; border-bottom:1px solid var(--line); }
+  .tabs button { flex:1; border:0; background:var(--mist); border-radius:10px; padding:10px 6px; font-weight:700; cursor:pointer; }
+  .tabs button[aria-selected="true"] { background:var(--orange); color:var(--navy); }
+  label { display:block; font-weight:700; margin:14px 0 4px; }
+  .hint { color:var(--muted); font-size:.88rem; margin:4px 0 0; }
+  input[type=text], input[type=number], input[type=password], input[type=search], select, textarea { width:100%; padding:11px 12px; border:2px solid var(--line); border-radius:10px; background:#fff; }
+  input:focus, select:focus, textarea:focus { outline:none; border-color:var(--orange); }
+  .row { display:flex; gap:10px; }
+  .row > * { flex:1; min-width:0; }
+  .toolbar { display:flex; gap:10px; margin-bottom:12px; align-items:center; }
+  .toolbar input { flex:1; }
+  .item { display:flex; gap:12px; align-items:center; }
+  .thumb { width:68px; height:68px; flex:none; border-radius:10px; background:#fff; border:1px solid var(--line); display:grid; place-items:center; overflow:hidden; color:#a9b6d1; }
+  .thumb img { width:100%; height:100%; object-fit:contain; background:#fff; }
+  .item .meta { flex:1; min-width:0; }
+  .item .name { font-weight:700; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .item .sub { color:var(--muted); font-size:.9rem; }
+  .price { font-weight:800; display:flex; flex-wrap:wrap; align-items:center; gap:4px 10px; }
+  .price s { color:var(--muted); font-weight:400; }
+  .tag { display:inline-block; background:var(--orange); color:var(--navy); font-weight:800; font-size:.75rem; padding:1px 8px; border-radius:8px; }
+  .actions { display:flex; gap:8px; margin-top:10px; }
+  .empty { text-align:center; color:var(--muted); padding:30px 10px; }
+  dialog { border:0; padding:0; border-radius:16px; width:min(560px, calc(100% - 20px)); max-height:calc(100% - 20px); overflow:auto; background:#fff; color:var(--navy); }
+  dialog::backdrop { background:rgba(15,31,74,.6); }
+  dialog form { padding:16px; }
+  dialog h2 { margin:0 0 4px; font-size:1.2rem; }
+  .photo { width:150px; height:150px; margin:6px auto 8px; border-radius:14px; border:2px dashed var(--line); background:#fff; display:grid; place-items:center; overflow:hidden; color:var(--muted); text-align:center; font-size:.9rem; }
+  .photo img { width:100%; height:100%; object-fit:contain; }
+  .center { text-align:center; }
+  .busy { position:fixed; inset:0; background:rgba(15,31,74,.6); display:grid; place-items:center; z-index:50; }
+  .busy div { background:#fff; border-radius:16px; padding:22px 26px; text-align:center; font-weight:700; }
+  .spin { width:34px; height:34px; border:4px solid var(--line); border-top-color:var(--orange); border-radius:50%; margin:0 auto 10px; animation:spin 1s linear infinite; }
+  @keyframes spin { to { transform:rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce) { .spin { animation:none; } }
+  .toast { position:fixed; left:50%; transform:translateX(-50%); bottom:18px; background:var(--navy); color:#fff; padding:12px 18px; border-radius:12px; max-width:calc(100% - 28px); z-index:60; font-weight:700; box-shadow:0 8px 24px rgba(0,0,0,.25); }
+  .toast.err { background:var(--red); }
+</style>
+</head>
+<body>
+<div id="app"></div>
+<noscript><p style="padding:20px">JavaScript is required to open this page.</p></noscript>
+
+<script>
+(() => {
+"use strict";
+
+/* ---------- helpers ---------- */
+const $ = (s, el = document) => el.querySelector(s);
+const h = (tag, attrs = {}, ...kids) => {
+  const el = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs || {})) {
+    if (k === "class") el.className = v;
+    else if (k.startsWith("on")) el.addEventListener(k.slice(2), v);
+    else if (v === true) el.setAttribute(k, "");
+    else if (v !== false && v != null) el.setAttribute(k, v);
+  }
+  for (const kid of kids.flat(Infinity)) {
+    if (kid == null || kid === false) continue;
+    el.append(kid.nodeType ? kid : document.createTextNode(String(kid)));
+  }
+  return el;
+};
+const store = {
+  get(k) { try { return localStorage.getItem(k) || ""; } catch (e) { return ""; } },
+  set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} },
+  del(k) { try { localStorage.removeItem(k); } catch (e) {} }
+};
+const utf8ToB64 = (str) => { const bytes = new TextEncoder().encode(str); let bin = ""; bytes.forEach((b) => (bin += String.fromCharCode(b))); return btoa(bin); };
+const b64ToUtf8 = (b64) => { const bin = atob(String(b64).replace(/\s/g, "")); return new TextDecoder().decode(Uint8Array.from(bin, (c) => c.charCodeAt(0))); };
+const money = (n) => "Rs." + Number(n).toLocaleString("en-US");
+const discount = (p) => (p.oldPrice && p.oldPrice > p.price ? Math.round((1 - p.price / p.oldPrice) * 100) : 0);
+
+/* ---------- state ---------- */
+const SALE = "Sale Offers";
+const KEYS = { token: "rm_admin_token", owner: "rm_admin_owner", repo: "rm_admin_repo" };
+const DEFAULT_DATA = {
+  settings: { whatsapp: "923376046968", stripMessages: ["Free Delivery Across Pakistan", "Cash on Delivery", "3-Day Return Policy"], heroTitle: "Shop Smart, Live Better.", heroImage: "" },
+  collections: ["Kitchen", "Home", "Health & Personal Care", "Gadgets & Accessories", "Everyday Essentials"],
+  products: []
+};
+function guessRepo() {
+  const host = location.hostname, first = location.pathname.split("/").filter(Boolean)[0] || "";
+  if (host.endsWith(".github.io")) {
+    const owner = host.split(".")[0];
+    const repo = first && !first.includes(".") ? first : host;
+    return { owner, repo };
+  }
+  return { owner: "riazmart", repo: "riazmart" };
+}
+const guess = guessRepo();
+const cfg = { owner: store.get(KEYS.owner) || guess.owner, repo: store.get(KEYS.repo) || guess.repo, token: store.get(KEYS.token), branch: "main" };
+let data = null, sha = null, tab = "products", query = "";
+const previews = {};
+const app = $("#app");
+
+/* ---------- messages ---------- */
+function errText(e) {
+  if (e && e.status === 401) return "The token is wrong or has expired. Please create a new token.";
+  if (e && e.status === 403) return "Permission denied. Check that the token has Contents: Read and write.";
+  if (e && e.status === 404) return "Repository or file not found. Check the username and repository name.";
+  if (e && (e.status === 409 || e.status === 422)) return "The file changed at the same time. Please try again.";
+  if (e instanceof TypeError) return "Internet problem. Check your connection and try again.";
+  return "Something went wrong: " + ((e && e.message) || e);
+}
+let toastTimer;
+function toast(msg, isErr) {
+  const old = $(".toast"); if (old) old.remove();
+  const t = h("div", { class: "toast" + (isErr ? " err" : ""), role: "status" }, msg);
+  document.body.append(t);
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.remove(), isErr ? 7000 : 4500);
+}
+function busy(text) {
+  const el = h("div", { class: "busy" }, h("div", {}, h("div", { class: "spin" }), text));
+  document.body.append(el);
+  return () => el.remove();
+}
+async function withBusy(text, fn) {
+  const done = busy(text);
+  try { return await fn(); } finally { done(); }
+}
+
+/* ---------- GitHub API ---------- */
+const enc = (path) => path.split("/").map(encodeURIComponent).join("/");
+async function gh(path, opts = {}) {
+  const res = await fetch("https://api.github.com/repos/" + encodeURIComponent(cfg.owner) + "/" + encodeURIComponent(cfg.repo) + path, {
+    method: opts.method || "GET",
+    headers: Object.assign({
+      "Authorization": "Bearer " + cfg.token,
+      "Accept": "application/vnd.github+json",
+      "X-GitHub-Api-Version": "2022-11-28"
+    }, opts.body ? { "Content-Type": "application/json" } : {}),
+    body: opts.body
+  });
+  if (!res.ok) {
+    const err = new Error("HTTP " + res.status);
+    err.status = res.status;
+    try { err.body = await res.json(); } catch (e) {}
+    throw err;
+  }
+  return res.status === 204 ? null : res.json();
+}
+async function getFile(path) {
+  try { return await gh("/contents/" + enc(path) + "?ref=" + encodeURIComponent(cfg.branch)); }
+  catch (e) { if (e.status === 404) return null; throw e; }
+}
+function putFile(path, b64, message, fileSha) {
+  const body = { message, content: b64, branch: cfg.branch };
+  if (fileSha) body.sha = fileSha;
+  return gh("/contents/" + enc(path), { method: "PUT", body: JSON.stringify(body) });
+}
+async function removeFile(path, message) {
+  try {
+    const f = await getFile(path);
+    if (f) await gh("/contents/" + enc(path), { method: "DELETE", body: JSON.stringify({ message, sha: f.sha, branch: cfg.branch }) });
+  } catch (e) { /* not important */ }
+}
+function normalize(d) {
+  d = d && typeof d === "object" ? d : {};
+  return {
+    settings: Object.assign({}, DEFAULT_DATA.settings, d.settings || {}),
+    collections: Array.isArray(d.collections) ? d.collections.filter((c) => c && c !== SALE) : DEFAULT_DATA.collections.slice(),
+    products: Array.isArray(d.products) ? d.products : []
+  };
+}
+async function loadData() {
+  const f = await getFile("products.json");
+  if (!f) { data = normalize(null); sha = null; return; }
+  sha = f.sha;
+  data = normalize(JSON.parse(b64ToUtf8(f.content)));
+}
+async function saveData(message) {
+  const body = utf8ToB64(JSON.stringify(data, null, 2) + "\n");
+  try {
+    const r = await putFile("products.json", body, message, sha);
+    sha = r.content.sha;
+  } catch (e) {
+    if (e.status === 409 || e.status === 422) {
+      const f = await getFile("products.json");
+      const r = await putFile("products.json", body, message, f ? f.sha : null);
+      sha = r.content.sha;
+    } else throw e;
+  }
+}
+
+/* ---------- image processing ---------- */
+function loadImage(file) {
+  return new Promise((resolve, reject) => {
+    const url = URL.createObjectURL(file);
+    const img = new Image();
+    img.onload = () => { URL.revokeObjectURL(url); resolve(img); };
+    img.onerror = () => { URL.revokeObjectURL(url); reject(new Error("This picture could not be opened")); };
+    img.src = url;
+  });
+}
+async function processImage(file, opts) {
+  const img = await loadImage(file);
+  const w = img.naturalWidth, hgt = img.naturalHeight;
+  const canvas = document.createElement("canvas");
+  const ctx = canvas.getContext("2d");
+  if (opts.square) {
+    const S = 1000, k = Math.min((S * 0.96) / w, (S * 0.96) / hgt);
+    canvas.width = S; canvas.height = S;
+    ctx.fillStyle = "#ffffff"; ctx.fillRect(0, 0, S, S);
+    ctx.imageSmoothingQuality = "high";
+    ctx.drawImage(img, (S - w * k) / 2, (S - hgt * k) / 2, w * k, hgt * k);
+  } else {
+    const k = Math.min(1, 1600 / w);
+    canvas.width = Math.round(w * k); canvas.height = Math.round(hgt * k);
+    ctx.fillStyle = "#ffffff"; ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.imageSmoothingQuality = "high";
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+  }
+  let q = 0.86, url = canvas.toDataURL("image/jpeg", q);
+  while (url.length * 0.75 > 350000 && q > 0.5) { q -= 0.1; url = canvas.toDataURL("image/jpeg", q); }
+  return { dataUrl: url, b64: url.split(",")[1] };
+}
+const imgSrc = (path) => previews[path] || path;
+const newImagePath = (prefix) => "images/" + prefix + "-" + Date.now().toString(36) + ".jpg";
+
+/* ---------- views ---------- */
+function render() {
+  app.replaceChildren(data ? mainView() : loginView());
+}
+
+function loginView() {
+  const owner = h("input", { type: "text", value: cfg.owner, autocomplete: "off", autocapitalize: "off", required: true });
+  const repo = h("input", { type: "text", value: cfg.repo, autocomplete: "off", autocapitalize: "off", required: true });
+  const token = h("input", { type: "password", autocomplete: "off", placeholder: "github_pat_...", required: true });
+  const form = h("form", { onsubmit: async (ev) => {
+    ev.preventDefault();
+    cfg.owner = owner.value.trim(); cfg.repo = repo.value.trim(); cfg.token = token.value.trim();
+    try {
+      await withBusy("Logging in…", async () => {
+        const info = await gh("");
+        if (info.permissions && info.permissions.push === false) { const e = new Error("no push"); e.status = 403; throw e; }
+        cfg.branch = info.default_branch || "main";
+        await loadData();
+      });
+      store.set(KEYS.owner, cfg.owner); store.set(KEYS.repo, cfg.repo); store.set(KEYS.token, cfg.token);
+      render();
+    } catch (e) { data = null; toast(errText(e), true); }
+  } },
+    h("label", {}, "GitHub username"), owner,
+    h("label", {}, "Repository name"), repo,
+    h("label", {}, "Token (secret code)"), token,
+    h("p", { class: "hint" }, "The token stays only on your own phone."),
+    h("p", { class: "center" }, h("button", { class: "btn orange", type: "submit" }, "Log in"))
+  );
+  return h("div", {}, h("div", { class: "bar" }, h("h1", {}, "Riaz Mart Admin")),
+    h("div", { class: "wrap" }, h("div", { class: "card" }, h("h2", { style: "margin-top:0" }, "Log in"), form)));
+}
+
+function topbar() {
+  return h("div", { class: "bar" }, h("h1", {}, "Riaz Mart Admin"),
+    h("div", { class: "links" },
+      h("a", { class: "btn ghost", href: "./", target: "_blank", rel: "noopener" }, "View shop"),
+      h("button", { class: "btn ghost", type: "button", onclick: () => {
+        if (!confirm("Log out?")) return;
+        store.del(KEYS.token); cfg.token = ""; data = null; render();
+      } }, "Log out")));
+}
+
+function tabsBar() {
+  const mk = (id, label) => h("button", { type: "button", role: "tab", "aria-selected": String(tab === id), onclick: () => { tab = id; render(); window.scrollTo(0, 0); } }, label);
+  return h("div", { class: "tabs", role: "tablist" }, mk("products", "Products"), mk("collections", "Collections"), mk("settings", "Settings"));
+}
+
+function mainView() {
+  const body = tab === "products" ? productsView() : tab === "collections" ? collectionsView() : settingsView();
+  return h("div", {}, topbar(), tabsBar(), h("div", { class: "wrap" }, body));
+}
+
+/* ----- products ----- */
+function productsView() {
+  const q = query.trim().toLowerCase();
+  const list = data.products.filter((p) => !q || String(p.name).toLowerCase().includes(q));
+  const search = h("input", { type: "search", placeholder: "Search", value: query, "aria-label": "Search products", oninput: (e) => {
+    query = e.target.value; const pos = e.target.selectionStart; render(); const s = $(".toolbar input"); s.focus(); try { s.setSelectionRange(pos, pos); } catch (x) {}
+  } });
+  const box = h("div", {}, h("div", { class: "toolbar" }, search, h("button", { class: "btn orange", type: "button", onclick: () => productForm(null) }, "+ Add product")),
+    h("p", { class: "hint" }, "Total products: " + data.products.length));
+  if (!list.length) box.append(h("div", { class: "empty" }, data.products.length ? "No product found." : "No products yet. Tap “+ Add product” above."));
+  list.forEach((p) => {
+    const off = discount(p);
+    const thumb = h("div", { class: "thumb" }, p.image ? h("img", { src: imgSrc(p.image), alt: "" }) : "🛍");
+    box.append(h("div", { class: "card" },
+      h("div", { class: "item" }, thumb, h("div", { class: "meta" },
+        h("div", { class: "name" }, p.name),
+        h("div", { class: "price" }, money(p.price), off ? h("s", {}, money(p.oldPrice)) : null, off ? h("span", { class: "tag" }, "SAVE " + off + "%") : null),
+        h("div", { class: "sub" }, p.collection || "—"))),
+      h("div", { class: "actions" },
+        h("button", { class: "btn light small", type: "button", onclick: () => productForm(p) }, "Edit"),
+        h("button", { class: "btn danger small", type: "button", onclick: () => deleteProduct(p) }, "Delete"))));
+  });
+  return box;
+}
+
+function productForm(p) {
+  const editing = !!p;
+  const pending = { b64: null, dataUrl: null };
+  const dlg = h("dialog", { "aria-label": editing ? "Edit product" : "Add product" });
+  const photo = h("div", { class: "photo" });
+  const showPhoto = () => {
+    const src = pending.dataUrl || (editing && p.image ? imgSrc(p.image) : "");
+    photo.replaceChildren(src ? h("img", { src, alt: "" }) : "No photo");
+  };
+  const file = h("input", { type: "file", accept: "image/*", hidden: true, onchange: async (e) => {
+    const f = e.target.files && e.target.files[0]; if (!f) return;
+    try { const r = await withBusy("Preparing photo…", () => processImage(f, { square: true })); pending.b64 = r.b64; pending.dataUrl = r.dataUrl; showPhoto(); }
+    catch (err) { toast(errText(err), true); }
+  } });
+  showPhoto();
+  const name = h("input", { type: "text", value: editing ? p.name : "", placeholder: "Product name", required: true, maxlength: "90" });
+  const coll = h("select", {}, h("option", { value: "" }, "Choose collection"), data.collections.map((c) => h("option", { value: c, selected: editing && p.collection === c }, c)));
+  const price = h("input", { type: "number", inputmode: "numeric", min: "1", value: editing ? p.price : "", placeholder: "1499", required: true });
+  const old = h("input", { type: "number", inputmode: "numeric", min: "1", value: editing && p.oldPrice ? p.oldPrice : "", placeholder: "Optional" });
+  const off = h("p", { class: "hint" });
+  const upd = () => {
+    const a = Number(price.value), b = Number(old.value);
+    off.textContent = b && a && b > a ? "Sale tag will show: SAVE " + Math.round((1 - a / b) * 100) + "%. The product will also appear in Sale Offers." : b ? "Old price must be higher than the price." : "Leave old price empty for a normal product (no sale tag).";
+  };
+  price.addEventListener("input", upd); old.addEventListener("input", upd); upd();
+  const desc = h("textarea", { rows: "3", placeholder: "Optional" }, editing && p.description ? p.description : "");
+
+  const form = h("form", { onsubmit: async (ev) => {
+    ev.preventDefault();
+    const nm = name.value.trim(), pr = Number(price.value), op = old.value ? Number(old.value) : 0;
+    if (!nm) return toast("Please write the product name.", true);
+    if (!(pr > 0)) return toast("Please write the price.", true);
+    if (op && op <= pr) return toast("Old price must be higher than the price.", true);
+    if (!coll.value) return toast("Please choose a collection.", true);
+    try {
+      await withBusy("Saving… please wait", async () => {
+        let image = editing ? p.image || "" : "";
+        const oldImage = image;
+        if (pending.b64) {
+          image = newImagePath("p");
+          await putFile(image, pending.b64, "Add product image");
+          previews[image] = pending.dataUrl;
+        }
+        const obj = { id: editing ? p.id : "p" + Date.now().toString(36), name: nm, collection: coll.value, price: pr };
+        if (op) obj.oldPrice = op;
+        obj.image = image;
+        if (desc.value.trim()) obj.description = desc.value.trim();
+        const before = data.products.slice();
+        if (editing) data.products = data.products.map((x) => (x.id === p.id ? obj : x)); else data.products.unshift(obj);
+        try { await saveData((editing ? "Edit product: " : "Add product: ") + nm); }
+        catch (e) { data.products = before; throw e; }
+        if (pending.b64 && oldImage) await removeFile(oldImage, "Remove old product image");
+      });
+      dlg.close(); dlg.remove(); render();
+      toast("Saved. It will show on your shop in 1 to 2 minutes.");
+    } catch (e) { toast(errText(e), true); }
+  } },
+    h("h2", {}, editing ? "Edit product" : "Add product"),
+    photo,
+    h("p", { class: "center" }, h("button", { class: "btn light small", type: "button", onclick: () => file.click() }, "Choose photo"), file),
+    h("p", { class: "hint center" }, "The photo is placed on a white square and made smaller automatically."),
+    h("label", {}, "Product name"), name,
+    h("label", {}, "Collection"), coll,
+    h("div", { class: "row" }, h("div", {}, h("label", {}, "Price (Rs.)"), price), h("div", {}, h("label", {}, "Old price"), old)),
+    off,
+    h("label", {}, "Description (optional)"), desc,
+    h("div", { class: "actions" },
+      h("button", { class: "btn orange", type: "submit" }, "Save"),
+      h("button", { class: "btn light", type: "button", onclick: () => { dlg.close(); dlg.remove(); } }, "Cancel")));
+  dlg.append(form);
+  document.body.append(dlg);
+  dlg.showModal();
+}
+
+async function deleteProduct(p) {
+  if (!confirm("Delete “" + p.name + "”?")) return;
+  try {
+    await withBusy("Deleting…", async () => {
+      const before = data.products.slice();
+      data.products = data.products.filter((x) => x.id !== p.id);
+      try { await saveData("Delete product: " + p.name); } catch (e) { data.products = before; throw e; }
+      if (p.image) await removeFile(p.image, "Remove product image");
+    });
+    render(); toast("Deleted.");
+  } catch (e) { toast(errText(e), true); }
+}
+
+/* ----- collections ----- */
+function collectionsView() {
+  const input = h("input", { type: "text", placeholder: "New collection name", maxlength: "40" });
+  const box = h("div", {},
+    h("div", { class: "card" }, h("p", { class: "hint", style: "margin:0" }, "“Sale Offers” is a special collection. It fills up automatically with products that have an old price, so it is not listed here.")),
+    h("div", { class: "card" }, h("label", { style: "margin-top:0" }, "New collection"), input,
+      h("p", {}, h("button", { class: "btn orange", type: "button", onclick: async () => {
+        const nm = input.value.trim();
+        if (!nm) return toast("Please write the collection name.", true);
+        if (nm.toLowerCase() === SALE.toLowerCase() || data.collections.some((c) => c.toLowerCase() === nm.toLowerCase())) return toast("This collection already exists.", true);
+        const before = data.collections.slice();
+        data.collections.push(nm);
+        try { await withBusy("Saving…", () => saveData("Add collection: " + nm)); render(); toast("Collection added."); }
+        catch (e) { data.collections = before; toast(errText(e), true); }
+      } }, "Add collection"))));
+  data.collections.forEach((c) => {
+    const count = data.products.filter((p) => p.collection === c).length;
+    box.append(h("div", { class: "card" }, h("div", { class: "item" },
+      h("div", { class: "meta" }, h("div", { class: "name" }, c), h("div", { class: "sub" }, "Products: " + count)),
+      h("button", { class: "btn danger small", type: "button", onclick: async () => {
+        if (count) return toast("This collection has products. Move or delete them first.", true);
+        if (!confirm("Delete the collection “" + c + "”?")) return;
+        const before = data.collections.slice();
+        data.collections = data.collections.filter((x) => x !== c);
+        try { await withBusy("Saving…", () => saveData("Delete collection: " + c)); render(); toast("Collection deleted."); }
+        catch (e) { data.collections = before; toast(errText(e), true); }
+      } }, "Delete"))));
+  });
+  return box;
+}
+
+/* ----- settings ----- */
+function settingsView() {
+  const s = data.settings;
+  const pending = { b64: null, dataUrl: null, remove: false };
+  const wa = h("input", { type: "text", inputmode: "numeric", value: s.whatsapp || "" });
+  const strips = [0, 1, 2].map((i) => h("input", { type: "text", value: (s.stripMessages || [])[i] || "", maxlength: "60", style: "margin-bottom:8px" }));
+  const title = h("input", { type: "text", value: s.heroTitle || "", maxlength: "60" });
+  const prev = h("div", { class: "card center hint" });
+  const showPrev = () => {
+    const src = pending.remove ? "" : pending.dataUrl || (s.heroImage ? imgSrc(s.heroImage) : "");
+    prev.replaceChildren(src ? h("img", { src, alt: "", style: "max-width:100%;border-radius:12px" }) : "The built-in banner design is being used.");
+  };
+  showPrev();
+  const file = h("input", { type: "file", accept: "image/*", hidden: true, onchange: async (e) => {
+    const f = e.target.files && e.target.files[0]; if (!f) return;
+    try { const r = await withBusy("Preparing photo…", () => processImage(f, { square: false })); pending.b64 = r.b64; pending.dataUrl = r.dataUrl; pending.remove = false; showPrev(); }
+    catch (err) { toast(errText(err), true); }
+  } });
+  return h("div", {}, h("div", { class: "card" },
+    h("label", { style: "margin-top:0" }, "WhatsApp number"), wa,
+    h("p", { class: "hint" }, "Without +, with country code. Example: 923001234567"),
+    h("label", {}, "Top moving strip messages (can leave some empty)"), strips,
+    h("label", {}, "Banner headline"), title),
+    h("div", { class: "card" }, h("label", { style: "margin-top:0" }, "Banner picture (optional)"), prev,
+      h("p", { class: "hint" }, "If you add your own picture, it replaces the built-in banner design. A wide picture works best (for example 1600×600)."),
+      h("div", { class: "actions" },
+        h("button", { class: "btn light small", type: "button", onclick: () => file.click() }, "Choose picture"),
+        h("button", { class: "btn danger small", type: "button", onclick: () => { pending.remove = true; pending.b64 = null; pending.dataUrl = null; showPrev(); } }, "Remove picture"), file)),
+    h("p", { class: "center" }, h("button", { class: "btn orange", type: "button", onclick: async () => {
+      const num = wa.value.replace(/[^0-9]/g, "");
+      if (num.length < 10) return toast("Please write a correct WhatsApp number.", true);
+      const msgs = strips.map((i) => i.value.trim()).filter(Boolean);
+      if (!msgs.length) return toast("Keep at least one message in the strip.", true);
+      const before = JSON.parse(JSON.stringify(data.settings));
+      try {
+        await withBusy("Saving…", async () => {
+          let hero = s.heroImage || "";
+          const oldHero = hero;
+          if (pending.remove) hero = "";
+          if (pending.b64) { hero = newImagePath("hero"); await putFile(hero, pending.b64, "Add banner image"); previews[hero] = pending.dataUrl; }
+          data.settings = Object.assign({}, s, { whatsapp: num, stripMessages: msgs, heroTitle: title.value.trim() || DEFAULT_DATA.settings.heroTitle, heroImage: hero });
+          try { await saveData("Update settings"); } catch (e) { data.settings = before; throw e; }
+          if (oldHero && oldHero !== hero) await removeFile(oldHero, "Remove old banner image");
+        });
+        render(); toast("Settings saved. They show on your shop in 1 to 2 minutes.");
+      } catch (e) { toast(errText(e), true); }
+    } }, "Save settings")));
+}
+
+/* ---------- start ---------- */
+async function start() {
+  if (cfg.token) {
+    try {
+      await withBusy("Opening…", async () => {
+        const info = await gh("");
+        cfg.branch = info.default_branch || "main";
+        await loadData();
+      });
+    } catch (e) { data = null; toast(errText(e), true); }
+  }
+  render();
+}
+start();
+})();
+</script>
+</body>
+</html>
