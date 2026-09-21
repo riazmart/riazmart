@@ -1,0 +1,110 @@
+{
+  "settings": {
+    "whatsapp": "923376046968",
+    "stripMessages": [
+      "Free Delivery Across Pakistan",
+      "Cash on Delivery",
+      "3-Day Return Policy"
+    ],
+    "heroTitle": "Shop Smart, Live Better.",
+    "heroImage": ""
+  },
+  "collections": [
+    "Kitchen",
+    "Home",
+    "Health & Personal Care",
+    "Gadgets & Accessories",
+    "Everyday Essentials"
+  ],
+  "products": [
+    {
+      "id": "p1",
+      "name": "2-in-1 Oil Sprayer & Dispenser",
+      "collection": "Kitchen",
+      "price": 1499,
+      "oldPrice": 1999,
+      "image": ""
+    },
+    {
+      "id": "p2",
+      "name": "Silicone Dishwashing Gloves",
+      "collection": "Kitchen",
+      "price": 600,
+      "image": ""
+    },
+    {
+      "id": "p3",
+      "name": "Stainless Steel Storage Jar Set",
+      "collection": "Kitchen",
+      "price": 1800,
+      "oldPrice": 2400,
+      "image": ""
+    },
+    {
+      "id": "p4",
+      "name": "Stainless Steel Mobile & Tablet Stand",
+      "collection": "Home",
+      "price": 900,
+      "oldPrice": 1200,
+      "image": ""
+    },
+    {
+      "id": "p5",
+      "name": "Foldable Laundry Basket",
+      "collection": "Home",
+      "price": 1200,
+      "image": ""
+    },
+    {
+      "id": "p6",
+      "name": "LED Night Lamp",
+      "collection": "Home",
+      "price": 1050,
+      "image": ""
+    },
+    {
+      "id": "p7",
+      "name": "Rose Gold Eyebrow & Hair Trimmer",
+      "collection": "Health & Personal Care",
+      "price": 1500,
+      "oldPrice": 2000,
+      "image": ""
+    },
+    {
+      "id": "p8",
+      "name": "Facial Cleansing Brush",
+      "collection": "Health & Personal Care",
+      "price": 2100,
+      "image": ""
+    },
+    {
+      "id": "p9",
+      "name": "Wireless Bluetooth Earbuds",
+      "collection": "Gadgets & Accessories",
+      "price": 2400,
+      "image": ""
+    },
+    {
+      "id": "p10",
+      "name": "Fast Charging Cable",
+      "collection": "Gadgets & Accessories",
+      "price": 600,
+      "oldPrice": 800,
+      "image": ""
+    },
+    {
+      "id": "p11",
+      "name": "Multi-Purpose Storage Organizer",
+      "collection": "Everyday Essentials",
+      "price": 750,
+      "image": ""
+    },
+    {
+      "id": "p12",
+      "name": "Travel Water Bottle",
+      "collection": "Everyday Essentials",
+      "price": 900,
+      "image": ""
+    }
+  ]
+}
