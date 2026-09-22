@@ -1,4 +1,4 @@
-{
+
   "settings": {
     "whatsapp": "923376046968",
     "stripMessages": [
@@ -126,7 +126,4 @@
       "name": "Travel Water Bottle",
       "collection": "Everyday Essentials",
       "price": 900,
-      "image": ""
-    }
-  ]
-}
+      "image"
