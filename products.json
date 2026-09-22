@@ -15,7 +15,21 @@
       "youtube": "https://youtube.com/@riazguidetv?si=hNQszCQA9GBwMrVX",
       "telegram": "https://t.me/cryptorajji804",
       "whatsapp": "https://whatsapp.com/channel/0029VbECF4ZGJP8Q7UHAS71s"
-    }
+    },
+    "policies": [
+      {
+        "title": "Return & Refund Policy",
+        "body": "Local items: returns are accepted within 3 days of delivery if the product is damaged, wrong, or defective. Contact us on WhatsApp with your order details and a photo.\n\nItems shipped from China are not returnable once delivered.\n\nAny item that is broken, damaged, burnt, or misused by the customer after delivery is not eligible for return.\n\nOnce a return is received and approved, the refund is processed and may take up to 1 week to reach you."
+      },
+      {
+        "title": "Shipping & Delivery",
+        "body": "Local orders: usually delivered within 3-5 working days across Pakistan. Cash on Delivery is available, and you will get a call or WhatsApp message before delivery.\n\nItems shipped directly from China: delivery normally takes 10-15 days."
+      },
+      {
+        "title": "Privacy Policy",
+        "body": "We only collect the details needed to process your order: your name, phone number, and delivery address.\n\nThis information is used only to deliver your order and contact you about it. It is never sold and is not shared with anyone outside what is needed to fulfil your order."
+      }
+    ]
   },
   "collections": [
     "Kitchen",
