@@ -18,6 +18,13 @@
     },
     "policies": []
   },
-  "collections": ["Kitchen", "Home", "Health & Personal Care", "Gadgets & Accessories", "Everyday Essentials", "China"],
+  "collections": [
+    "Kitchen",
+    "Home",
+    "Health & Personal Care",
+    "Gadgets & Accessories",
+    "Everyday Essentials",
+    "China"
+  ],
   "products": []
 }
