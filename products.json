@@ -18,6 +18,30 @@
     },
     "policies": []
   },
-  "collections": ["Kitchen", "Home", "Health & Personal Care", "Gadgets & Accessories", "Everyday Essentials", "China"],
-  "products": []
+  "collections": [
+    "Kitchen",
+    "Home",
+    "Health & Personal Care",
+    "Gadgets & Accessories",
+    "Everyday Essentials",
+    "China"
+  ],
+  "products": [
+    {
+      "id": "pmuewa4pd",
+      "name": "Premium Foldable Mobile Phone Holder & Desk Stand – Adjustable Angle & Lightweight Portabl",
+      "collection": "Everyday Essentials",
+      "price": 899,
+      "oldPrice": 1050,
+      "image": "images/p-muewa2id.jpg",
+      "description": "Enhance your daily productivity and entertainment experience with our Premium Foldable Mobile Phone Holder. Designed for convenience and versatility, this lightweight and compact stand is the perfect companion for your desk, bedside table, or travel bag.\n\nKey Features:\n• Fully Adjustable Angle: Easily customize your viewing angle for maximum comfort while watching videos, reading, or video calling.\n• Universal Compatibility: Perfectly fits all smartphones and mini-tablets of various sizes.\n• Sturdy & Durable Build: Crafted from high-quality, durable plastic with anti-slip pads to keep your device secure and scratch-free.\n• Portable & Foldable: Easily folds flat into a pocket-sized design, making it effortless to carry anywhere you go.\n• Hands-Free Convenience: Ideal for online classes, working from home, cooking, gaming, or streaming media.\n\nPackage Includes:\n• 1 x Adjustable Mobile Phone Holder",
+      "reviews": [
+        {
+          "name": "Danyal Khan",
+          "rating": 4,
+          "text": "Amazing Product"
+        }
+      ]
+    }
+  ]
 }
