@@ -7,7 +7,7 @@
       "3-Day Return Policy"
     ],
     "heroTitle": "Shop Smart, Live Better.",
-    "heroImage": "",
+    "heroImage": "images/hero-banner.png",
     "social": {
       "facebook": "https://www.facebook.com/share/1Ff1RWbuhj/",
       "instagram": "https://www.instagram.com/riazmart7536?stkn=MWxwOTlmMGlvNDg1MA==",
@@ -19,19 +19,19 @@
     "policies": []
   },
   "collections": [
-    "Health & Personal Care",
-    "Gadgets & Accessories",
-    "Everyday Essentials",
-    "China",
-    "Watches",
+    "Home & Kitchen",
     "Men's Collection",
-    "Home & Kitchen"
+    "Women's Collection",
+    "Kids Collection",
+    "Electronics & Gadgets",
+    "Health & Personal Care",
+    "China"
   ],
   "products": [
     {
       "id": "pmugifkbw",
       "name": "Stylish Laptop Bag Blue Gray Black Polyester Lightweight",
-      "collection": "Everyday Essentials",
+      "collection": "Electronics & Gadgets",
       "price": 1150,
       "image": "images/p-mugifiew.jpg",
       "description": "This is a lightweight and durable polyester laptop bag designed for everyday utility. It features a versatile 15-inch size suitable for multiple purposes. The package includes one sleek laptop bag."
@@ -39,7 +39,7 @@
     {
       "id": "pmuez01l6",
       "name": "Heart & Butterfly Wall Clock Black Battery Operated",
-      "collection": "Watches",
+      "collection": "Home & Kitchen",
       "price": 1199,
       "image": "images/p-mueyzzsz.jpg",
       "description": "Stylish battery-operated wall clock featuring a heart and butterfly design, made from wood in a black color."
@@ -55,7 +55,7 @@
     {
       "id": "pmueyfsx4",
       "name": "Premium Wireless Earbuds Black Yellow Bluetooth 5.3",
-      "collection": "Gadgets & Accessories",
+      "collection": "Electronics & Gadgets",
       "price": 1450,
       "image": "images/p-mueyfr4o.jpg",
       "description": "Premium wireless earbuds featuring Bluetooth 5.3 and smart touch controls. Designed for all-day comfort with a long-lasting battery, fast charging, and clear voice quality."
@@ -63,7 +63,7 @@
     {
       "id": "pmuey30x3",
       "name": "Compact Leather Jewelry Box Multicolor Zipper Closure 10x10x5cm",
-      "collection": "Gadgets & Accessories",
+      "collection": "Women's Collection",
       "price": 1150,
       "image": "images/p-muey2yuk.jpg",
       "description": "Compact Leather Jewelry Box Multicolor Zipper Closure 10x10x5cm"
@@ -71,7 +71,7 @@
     {
       "id": "pmuexy25k",
       "name": "Foldable Silicone Water Bottle 600 ML",
-      "collection": "Everyday Essentials",
+      "collection": "Home & Kitchen",
       "price": 1750,
       "oldPrice": 1999,
       "image": "images/p-muexxzoh.jpg",
@@ -88,7 +88,7 @@
     {
       "id": "pmuewvdk0",
       "name": "Premium Silicone Bath & Body Brush with Built-in Soap Dispenser",
-      "collection": "Gadgets & Accessories",
+      "collection": "Health & Personal Care",
       "price": 950,
       "image": "images/p-muewvbm2.jpg",
       "description": "Premium silicone bath and body brush featuring a built-in soap dispenser for an easy and refreshing shower experience. Made from high-quality silicone material, it gently cleanses and massages the skin."
@@ -96,7 +96,7 @@
     {
       "id": "pmuewo4bo",
       "name": "Heavy Duty Waterproof Bike Cover - All-Weather Protection Parachute Material",
-      "collection": "Everyday Essentials",
+      "collection": "Men's Collection",
       "price": 1450,
       "image": "images/p-muewo2ko.jpg",
       "description": "Waterproof bike cover made from high-quality durable parachute material to protect your motorcycle from rain, dust, and harsh sunlight. It comes with securing cables for easy installation, a secure fit, and is designed to keep your bike safe in all weather conditions."
@@ -104,7 +104,7 @@
     {
       "id": "pmuewgd2k",
       "name": "Elegant Luxury Digital Display Square Bracelet Touch Watch for Women",
-      "collection": "Watches",
+      "collection": "Women's Collection",
       "price": 1499,
       "image": "images/p-muewgaxp.jpg",
       "description": "Add a touch of elegance and modern style to your wrist with this stunning Digital Display Square Bracelet Touch Watch for Women. Designed to look like a piece of fine jewelry while offering modern digital functionality, it is the perfect accessory for both everyday wear and special occasions.\n\nKey Features:\n• Stylish Design: Features a chic square dial paired with a premium stainless steel bracelet strap[span_1](start_span)[span_1](end_span).\n• Touch Screen Display: Convenient digital display activated with a simple touch.\n• Versatile Fashion: Perfect match for casual outfits, formal wear, parties, and festive celebrations.\n• Durable Build: Crafted from high-quality stainless steel[span_2](start_span)[span_2](end_span) for long-lasting shine and durability.\n• Perfect Gift: An ideal gift choice for birthdays, anniversaries, or special occasions.\n\nPackage Includes:\n• 1 x Women's Bracelet Touch Watch[span_3](start_span)[span_3](end_span)"
@@ -112,7 +112,7 @@
     {
       "id": "pmuewa4pd",
       "name": "Premium Foldable Mobile Phone Holder & Desk Stand – Adjustable Angle & Lightweight Portabl",
-      "collection": "Everyday Essentials",
+      "collection": "Electronics & Gadgets",
       "price": 899,
       "oldPrice": 1050,
       "image": "images/p-muewa2id.jpg",
