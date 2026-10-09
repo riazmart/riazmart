@@ -29,6 +29,22 @@
   ],
   "products": [
     {
+      "id": "pmv0g772b",
+      "name": "Zafrani Whitening Cream 250g Acne Scar & Brightening",
+      "collection": "Health & Personal Care",
+      "price": 999,
+      "oldPrice": 1299,
+      "image": "images/p-mv0g757i.jpg",
+      "description": "Get flawless, glowing skin with Zafrani Whitening Cream! Specially formulated to clear acne scars, dark spots, and dead skin, it deeply hydrates and brightens your complexion naturally.  \n​Size: 250g  \n​Price: Rs. 560  \n​Note: Perform a patch test before first use.",
+      "reviews": [
+        {
+          "name": "Nazia",
+          "rating": 5,
+          "text": "Bht good result"
+        }
+      ]
+    },
+    {
       "id": "pmuz6uffr",
       "name": "2 in 1 Folding Travel Duffel Bag",
       "collection": "Women's Collection",
