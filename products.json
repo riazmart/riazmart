@@ -57,8 +57,12 @@
       "collection": "Women's Collection",
       "price": 2550,
       "oldPrice": 3150,
-      "image": "images/p-muz6ud5d.jpg",
-      "description": "Make your travels easier with this lightweight and spacious duffel bag. Made from durable parachute fabric with a separate wet and dry compartment. Easy to fold and carry by hand or shoulder. Perfect for travel gym weekend trips and overnight stays."
+      "image": "images/p-mv39amv1-c4i1.jpg",
+      "description": "Make your travels easier with this lightweight and spacious duffel bag. Made from durable parachute fabric with a separate wet and dry compartment. Easy to fold and carry by hand or shoulder. Perfect for travel gym weekend trips and overnight stays.",
+      "images": [
+        "images/p-mv39amv1-c4i1.jpg"
+      ],
+      "videos": []
     },
     {
       "id": "pmunrn0at",
