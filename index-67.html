@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Riaz Mart | Everyday Finds, Delivered Across Pakistan</title>
+<meta name="description" content="Shop home, kitchen, electronics, beauty and more at Riaz Mart. Free delivery across Pakistan, Cash on Delivery and 3-day returns.">
+<meta name="theme-color" content="#101d3a">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#101d3a;--orange:#f58220;--bg:#f5f6f8;--text:#182338;--muted:#687386;--line:#e5e8ee}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}a{color:inherit;text-decoration:none}
+button{font:inherit;border:0;background:0;cursor:pointer;color:inherit}
+.wrap{width:min(1320px,calc(100% - 32px));margin:0 auto}
+:focus-visible{outline:3px solid rgba(245,130,32,.55);outline-offset:2px}
+
+/* Marquee */
+.marquee{background:var(--navy);color:#fff;height:36px;overflow:hidden;display:flex;align-items:center}
+.track{display:flex;gap:56px;white-space:nowrap;animation:scroll 28s linear infinite;font-size:12px;font-weight:600;letter-spacing:.03em;padding-left:56px}
+.track span{display:inline-flex;align-items:center;gap:8px}.track i{color:var(--orange);font-style:normal}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* Header */
+.header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}
+.hi{display:flex;align-items:center;gap:12px;height:62px}
+.logo{display:flex;align-items:center;font-weight:800;font-size:20px;color:var(--navy);letter-spacing:-.03em}.logo img{height:38px;width:auto}
+.search{flex:1;max-width:380px;margin:0 auto;position:relative}
+.search input{width:100%;height:40px;padding:0 12px 0 38px;border:1px solid var(--line);border-radius:10px;background:#f8f9fb;font-size:14px}
+.search input:focus{outline:0;border-color:var(--navy);background:#fff}
+.search svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:16px;height:16px;color:#999}
+.acts{display:flex;gap:2px;margin-left:auto}
+.ib{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;position:relative;transition:background .15s,transform .15s}
+.ib:hover{background:var(--bg)}.ib:active{transform:scale(.9)}.ib svg{width:20px;height:20px}
+.badge{position:absolute;top:3px;right:3px;min-width:16px;height:16px;padding:0 4px;border-radius:8px;background:var(--orange);color:#fff;font-size:10px;font-weight:700;display:none;align-items:center;justify-content:center}
+.mw{position:relative}
+.dd{display:none;position:absolute;top:calc(100% + 6px);right:0;min-width:190px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.12);padding:6px;z-index:60}
+.dd.open{display:block}
+.dd a,.dd button{display:block;width:100%;padding:10px 12px;border-radius:8px;font-size:14px;text-align:left}
+.dd a:hover,.dd button:hover{background:var(--bg)}
+@media(max-width:600px){.hi{flex-wrap:wrap;height:auto;padding:8px 0}.search{order:3;flex:0 0 100%;max-width:none}}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;padding:0 22px;border-radius:10px;font-size:14px;font-weight:700;transition:transform .15s,box-shadow .2s,background .2s;position:relative;overflow:hidden;-webkit-tap-highlight-color:transparent}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(16,29,58,.18)}
+.btn:active{transform:scale(.95);box-shadow:none}
+.btn-o{background:var(--orange);color:#fff}.btn-o:hover{background:#e0720f}
+.btn-n{background:var(--navy);color:#fff}.btn-n:hover{background:#1b2d57}
+.btn-w{background:#fff;color:var(--navy);border:1px solid #dce2eb}
+.btn-f{width:100%}.btn-s{min-height:40px;padding:0 12px;font-size:13px}
+.btn-o::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);animation:shine 3.5s ease-in-out infinite}
+@keyframes shine{0%,60%{left:-60%}100%{left:130%}}
+
+/* Hero */
+.hero{background:linear-gradient(120deg,#f8f9fb,#e9eef6);border-bottom:1px solid var(--line)}
+.hg{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding:48px 0;min-height:440px}
+.kicker{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 14px;color:#596579;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.kicker b{width:7px;height:7px;border-radius:50%;background:var(--orange)}
+.hero h1{font-size:clamp(2.4rem,5vw,4.4rem);line-height:1.02;letter-spacing:-.06em;margin:20px 0 16px;color:var(--navy)}
+.hero h1 em{font-style:normal;color:var(--orange)}
+.hero p{font-size:clamp(15px,1.4vw,18px);color:#606b7d;max-width:480px;margin-bottom:24px;line-height:1.7}
+.ha{display:flex;gap:12px;flex-wrap:wrap}
+.trust{display:flex;gap:10px 22px;flex-wrap:wrap;margin-top:26px;font-size:12px;font-weight:650;color:#526076}
+.art{position:relative;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:12px;height:380px}
+.art div{border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 14px 36px rgba(16,29,58,.13)}
+.art div:first-child{grid-row:span 2}.art img{width:100%;height:100%;object-fit:cover}
+.art.ph{background:#fff;border-radius:18px;place-items:center;font-size:64px}
+.stick{position:absolute;left:-14px;bottom:18px;background:var(--navy);color:#fff;border-radius:12px;padding:12px 16px;font-size:12px;box-shadow:0 12px 30px rgba(16,29,58,.25)}.stick strong{display:block;font-size:15px}
+@media(max-width:800px){.hg{grid-template-columns:1fr;gap:26px;padding:32px 0;min-height:0}.art{height:260px}.stick{left:8px}}
+
+/* Benefits */
+.ben{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:-26px;position:relative;z-index:2}
+.ben div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;display:flex;gap:10px;align-items:center;box-shadow:0 6px 20px rgba(16,29,58,.05);font-size:12px;color:var(--muted)}
+.ben span{font-size:22px}.ben strong{display:block;color:var(--navy);font-size:13px}
+@media(max-width:760px){.ben{grid-template-columns:repeat(2,1fr);margin-top:16px}}
+
+.section{padding:30px 0}
+.st{font-size:clamp(21px,2vw,27px);font-weight:800;letter-spacing:-.03em;color:var(--navy);margin-bottom:18px}
+
+/* Categories */
+.cs{display:flex;gap:14px;overflow-x:auto;padding:4px 2px 12px;scroll-snap-type:x mandatory;scrollbar-width:none}.cs::-webkit-scrollbar{display:none}
+.col{flex:0 0 158px;scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;cursor:pointer;text-align:center;transition:transform .2s,box-shadow .2s}
+.col:hover{transform:translateY(-4px);box-shadow:0 14px 28px rgba(16,29,58,.1)}.col:active{transform:scale(.96)}
+.col-i{aspect-ratio:1;background:#eef1f6;display:grid;place-items:center;font-size:36px;overflow:hidden}.col-i img{width:100%;height:100%;object-fit:cover}
+.col h3{font-size:13px;font-weight:750;padding:10px 8px 2px;color:var(--text);line-height:1.3}.col small{display:block;font-size:11px;color:var(--muted);padding-bottom:12px}
+.col.on{border-color:var(--orange);box-shadow:0 0 0 2px rgba(245,130,32,.25)}
+
+/* Products */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media(min-width:768px){.grid{grid-template-columns:repeat(3,1fr);gap:16px}}
+@media(min-width:1024px){.grid{grid-template-columns:repeat(4,1fr);gap:18px}}
+.card{background:#fff;border:1px solid #e7eaf0;border-radius:14px;box-shadow:0 4px 16px rgba(16,29,58,.045);overflow:hidden;display:flex;flex-direction:column;opacity:0;transform:translateY(20px);transition:opacity .4s,transform .4s,box-shadow .2s}
+.card.show{opacity:1;transform:none}.card.show:hover{transform:translateY(-4px);box-shadow:0 14px 28px rgba(16,29,58,.1)}
+.ci{position:relative;aspect-ratio:1;background:#eef1f6;cursor:pointer;overflow:hidden}
+.ci img{width:100%;height:100%;object-fit:cover;transition:transform .4s}.card:hover .ci img{transform:scale(1.05)}
+.sale{position:absolute;top:8px;left:8px;background:var(--orange);color:#fff;font-size:11px;font-weight:800;padding:3px 8px;border-radius:6px}
+.tag{position:absolute;right:8px;top:8px;background:rgba(16,29,58,.9);color:#fff;border-radius:6px;padding:3px 7px;font-size:10px;font-weight:700}
+.cb{padding:12px;display:flex;flex-direction:column;gap:8px;flex:1}
+.cb h3{font-size:13px;font-weight:650;color:var(--navy);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.8em;cursor:pointer}
+.price{font-size:16px;font-weight:800;color:var(--navy)}.price s{font-size:12px;color:var(--muted);font-weight:400;margin-left:6px}
+.cbt{display:flex;flex-direction:column;gap:6px;margin-top:auto}
+@media(min-width:560px){.cbt{flex-direction:row}.cbt .btn{flex:1;min-width:0}}
+.ld,.no{grid-column:1/-1;text-align:center;padding:40px;color:var(--muted)}
+.sp{width:26px;height:26px;border:3px solid var(--line);border-top-color:var(--orange);border-radius:50%;margin:0 auto 8px;animation:sp .7s linear infinite}@keyframes sp{to{transform:rotate(360deg)}}
+
+/* Footer */
+.footer{background:var(--navy);color:#fff;margin-top:40px;padding:42px 0 24px}
+.fg{display:grid;gap:26px;margin-bottom:24px}@media(min-width:640px){.fg{grid-template-columns:1.4fr 1fr 1fr}}
+.footer h4{font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px}
+.footer p,.fl a{font-size:14px;color:#c3ccdb}.fl a{display:block;margin-bottom:8px;cursor:pointer}.fl a:hover{color:#fff}
+.soc{display:flex;gap:8px;margin-top:14px}.soc a{width:36px;height:36px;border:1px solid rgba(255,255,255,.2);border-radius:8px;display:grid;place-items:center;background:rgba(255,255,255,.08)}.soc a:hover{background:var(--orange);border-color:var(--orange)}.soc svg{width:16px;height:16px}
+.fb{border-top:1px solid rgba(255,255,255,.15);padding-top:16px;font-size:12px;color:#c3ccdb;text-align:center}
+
+/* Dialogs: closed dialogs MUST stay hidden */
+dialog:not([open]){display:none}
+.dr{border:0;padding:0;margin:0 0 0 auto;width:min(100vw,400px);height:100dvh;max-height:100dvh;background:#fff;flex-direction:column;box-shadow:-6px 0 28px rgba(0,0,0,.15)}
+.dr[open]{display:flex;animation:slide .25s ease}
+@keyframes slide{from{transform:translateX(40px);opacity:0}}
+dialog::backdrop{background:rgba(10,20,45,.45)}
+.dh{display:flex;align-items:center;justify-content:space-between;padding:16px;border-bottom:1px solid var(--line)}.dh h3{font-size:16px;color:var(--navy)}
+.dx{width:34px;height:34px;border-radius:8px;background:var(--bg);display:grid;place-items:center;font-size:18px}.dx:active{transform:scale(.9)}
+.db{flex:1;overflow-y:auto;padding:12px 16px}
+.df{padding:14px 16px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
+.em{text-align:center;padding:50px 12px;color:var(--muted)}
+.it{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid #eee}.it img{width:64px;height:64px;border-radius:8px;object-fit:cover;background:#eef1f6}
+.ii{flex:1;min-width:0}.ii .n{font-size:13px;font-weight:650;color:var(--navy);margin-bottom:6px}
+.ir{display:flex;align-items:center;justify-content:space-between}
+.qy{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}.qy button{width:30px;height:30px;background:var(--bg);font-weight:700}.qy button:active{background:var(--line)}.qy span{min-width:28px;text-align:center;font-size:13px;font-weight:700;line-height:30px}
+.rm{font-size:12px;color:var(--muted);text-decoration:underline;margin-top:4px}
+.tt{display:flex;justify-content:space-between;font-size:15px}.tt strong{font-size:18px;color:var(--navy)}
+.nt{text-align:center;font-size:12px;font-weight:650;color:var(--navy);background:#fff6ec;padding:9px;border-radius:8px}
+.of label{display:block;font-size:12px;font-weight:650;color:var(--navy);margin-bottom:4px}
+.of input,.of textarea{width:100%;padding:11px;border:1px solid var(--line);border-radius:8px;font:inherit;font-size:14px;margin-bottom:12px}
+.of input:focus,.of textarea:focus{outline:0;border-color:var(--navy)}
+.sm{background:var(--bg);border-radius:8px;padding:10px;margin-bottom:14px;font-size:13px}.sm .r{display:flex;justify-content:space-between;padding:2px 0;color:var(--muted)}.sm .r.t{font-weight:800;color:var(--navy);border-top:1px solid var(--line);margin-top:4px;padding-top:6px}
+.pm,.qm{border:0;padding:0;border-radius:16px;width:min(520px,calc(100% - 20px));max-height:calc(100dvh - 20px);overflow:auto;background:#fff;margin:auto}
+.pb{padding:22px;position:relative}.pb h2{font-size:17px;color:var(--navy);margin-bottom:12px;padding-right:34px}.pb p{font-size:14px;color:var(--muted);white-space:pre-line;line-height:1.7}
+.x{position:absolute;top:10px;right:10px;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.95);box-shadow:0 2px 8px rgba(0,0,0,.15);display:grid;place-items:center;font-size:20px;z-index:2}
+.qm{position:relative}.qi{width:100%;aspect-ratio:1;object-fit:cover;background:#eef1f6}
+.qt{display:flex;gap:8px;overflow-x:auto;padding:8px 12px 0}.qt button{flex:0 0 56px;height:56px;border:1px solid var(--line);border-radius:8px;overflow:hidden;font-size:10px;font-weight:700}.qt img{width:100%;height:100%;object-fit:cover}
+.qb{padding:16px}.qb h2{font-size:17px;color:var(--navy);margin-bottom:6px}.qb p{font-size:14px;color:var(--muted);margin:10px 0 14px}.qb .bt{display:flex;flex-direction:column;gap:8px}
+
+.ts{position:fixed;bottom:22px;left:50%;transform:translate(-50%,8px);background:var(--navy);color:#fff;padding:11px 18px;border-radius:10px;font-size:13px;font-weight:650;z-index:200;opacity:0;pointer-events:none;transition:.25s}.ts.on{opacity:1;transform:translate(-50%,0)}
+.wa{position:fixed;bottom:18px;right:14px;width:52px;height:52px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;z-index:30;box-shadow:0 4px 16px rgba(37,211,102,.4);animation:pulse 2.4s infinite}.wa svg{width:26px;height:26px}.wa:active{transform:scale(.9)}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%,100%{box-shadow:0 0 0 14px rgba(37,211,102,0)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.card{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<div class="marquee"><div class="track" id="track"></div></div>
+
+<header class="header"><div class="wrap hi">
+  <a href="#" class="logo" data-act="all" aria-label="Riaz Mart home"><img src="logo.png" alt="Riaz Mart" onerror="this.replaceWith(document.createTextNode('Riaz Mart'))"></a>
+  <div class="search">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input type="search" id="search" placeholder="Search products..." autocomplete="off" aria-label="Search products">
+  </div>
+  <div class="acts">
+    <button class="ib" data-act="cart" aria-label="Open cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M6 6L5 2H2"/></svg><span class="badge" id="badge">0</span></button>
+    <div class="mw">
+      <button class="ib" id="menuBtn" aria-label="Menu"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="12" cy="19" r="1.6"/></svg></button>
+      <div class="dd" id="dd"><a href="#products" data-act="all">All Products</a><a href="#categories">Categories</a><button type="button" data-act="cart">My Cart</button></div>
+    </div>
+  </div>
+</div></header>
+
+<section class="hero"><div class="wrap hg">
+  <div>
+    <span class="kicker"><b></b> The Everyday Edit · Riaz Mart</span>
+    <h1>Find your next<br><em>favorite thing.</em></h1>
+    <p>Quality finds for your home, style and daily routine, delivered to your door anywhere in Pakistan.</p>
+    <div class="ha"><a href="#products" class="btn btn-o">Shop Now →</a><a href="#categories" class="btn btn-w">Explore Categories</a></div>
+    <div class="trust"><span>✓ Free delivery</span><span>✓ Cash on Delivery</span><span>✓ 3-day returns</span></div>
+  </div>
+  <div class="art" id="art"><div class="ph" style="grid-row:span 2;grid-column:span 2;display:grid;place-items:center;font-size:64px">🛍️</div></div>
+</div></section>
+
+<div class="wrap ben">
+  <div><span>🚚</span><p><strong>Free Delivery</strong>Across Pakistan</p></div>
+  <div><span>💵</span><p><strong>Cash on Delivery</strong>Pay when it arrives</p></div>
+  <div><span>↩️</span><p><strong>3-Day Returns</strong>Easy & hassle-free</p></div>
+  <div><span>💬</span><p><strong>WhatsApp Support</strong>Quick replies</p></div>
+</div>
+
+<section class="section" id="categories"><div class="wrap"><h2 class="st">Shop by Category</h2><div class="cs" id="cols"></div></div></section>
+
+<section class="section" id="sale" style="padding-top:8px;display:none"><div class="wrap"><h2 class="st">On Sale</h2><div class="grid" id="saleGrid"></div></div></section>
+
+<section class="section" id="products" style="padding-top:8px"><div class="wrap"><h2 class="st" id="pTitle">All Products</h2><div class="grid" id="grid"><div class="ld"><div class="sp"></div>Loading...</div></div></div></section>
+
+<footer class="footer"><div class="wrap">
+  <div class="fg">
+    <div><h4>Riaz Mart</h4><p>Discover useful everyday finds, carefully selected for you.</p><div class="soc" id="socs"></div></div>
+    <div><h4>Shop</h4><div class="fl"><a href="#products" data-act="all">All Products</a><a href="#categories">Categories</a><a href="#" data-act="cart">My Cart</a></div></div>
+    <div><h4>Policies</h4><div class="fl"><a href="#" data-policy="return">Return & Refund Policy</a><a href="#" data-policy="shipping">Shipping & Delivery</a><a href="#" data-policy="privacy">Privacy Policy</a><a href="#" id="waF" target="_blank" rel="noopener">WhatsApp Us</a></div></div>
+  </div>
+  <div class="fb">&copy; <span id="yr"></span> Riaz Mart. All rights reserved.</div>
+</div></footer>
+
+<!-- Cart (opens when Add to Cart is clicked) -->
+<dialog class="dr" id="cartD">
+  <div class="dh"><h3>Your Cart</h3><button class="dx" data-close="cartD" aria-label="Close">&times;</button></div>
+  <div class="db" id="cB"></div>
+  <div class="df" id="cF" style="display:none">
+    <div class="nt">🚚 Free Delivery Across Pakistan</div>
+    <div class="tt"><span>Total</span><strong id="cT">Rs.0</strong></div>
+    <button class="btn btn-o btn-f" data-act="checkout">Checkout</button>
+    <button class="btn btn-w btn-f" data-close="cartD">Continue Shopping</button>
+  </div>
+</dialog>
+
+<!-- Order form (hidden until checkout) -->
+<dialog class="dr" id="ckD">
+  <div class="dh"><h3>Your Details</h3><button class="dx" data-close="ckD" aria-label="Close">&times;</button></div>
+  <div class="db">
+    <div class="nt" style="margin-bottom:12px">Cash on Delivery · Free Shipping</div>
+    <div class="sm" id="sm"></div>
+    <form class="of" id="fm">
+      <label for="nm">Name *</label><input id="nm" required autocomplete="name">
+      <label for="ph">Phone *</label><input id="ph" type="tel" placeholder="03XX XXXXXXX" required autocomplete="tel">
+      <label for="ct">City *</label><input id="ct" required autocomplete="address-level2">
+      <label for="ad">Address *</label><textarea id="ad" rows="2" required autocomplete="street-address"></textarea>
+      <button type="submit" class="btn btn-o btn-f">Send Order on WhatsApp</button>
+    </form>
+  </div>
+</dialog>
+
+<dialog class="pm" id="polD"><div class="pb"><button class="x" data-close="polD" aria-label="Close">&times;</button><h2 id="polTitle"></h2><p id="polBody"></p></div></dialog>
+<dialog class="qm" id="qM"><button class="x" data-close="qM" aria-label="Close">&times;</button><div id="qC"></div></dialog>
+
+<div class="ts" id="ts" role="status"></div>
+<a class="wa" id="waB" href="#" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3M12 21.8a9.9 9.9 0 01-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.9 9.9 0 1118.4-5.2c0 5.5-4.4 9.8-9.9 9.8M20.5 3.5A11.8 11.8 0 0012 0C5.5 0 .2 5.3.2 11.9c0 2.1.5 4.1 1.6 5.9L0 24l6.3-1.7a11.9 11.9 0 005.7 1.4c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.4-8.4"/></svg></a>
+
+<script>
+(()=>{
+"use strict";
+let D=null,C=[],F="all",Q="",obs=null;
+const $=s=>document.querySelector(s);
+const mon=n=>"Rs."+Number(n||0).toLocaleString("en-US");
+const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const toast=m=>{const t=$("#ts");t.textContent=m;t.classList.add("on");clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove("on"),2200)};
+const store={get(k){try{return JSON.parse(localStorage.getItem(k))}catch{return null}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch{}}};
+const POL={
+ return:["Return & Refund Policy","If a product arrives damaged or wrong, contact us on WhatsApp within 3 days of delivery with your order details and a photo.\n\nApproved returns are picked up or exchanged at no extra cost. Refunds are sent to the same payment method or as store credit, based on what you prefer."],
+ shipping:["Shipping & Delivery","We deliver across Pakistan. Orders are usually ready within 1-2 days and delivered within 3-5 working days, depending on your city.\n\nCash on Delivery is available. You will get a call or WhatsApp message before delivery."],
+ privacy:["Privacy Policy","We only collect the details needed to process your order: name, phone number, and delivery address.\n\nYour information is never sold or shared with anyone outside what is needed to deliver your order, and is kept only as long as necessary."]};
+const ICON={baby:"🍼",kid:"🧸",men:"👔",women:"👗",home:"🏠",kitchen:"🍳",elect:"🔌",gadget:"📱",health:"💆",beauty:"💄",watch:"⌚",jewel:"💍",travel:"🧳"};
+const icon=n=>{n=(n||"").toLowerCase();if(/women|ladies/.test(n))return ICON.women;for(const k in ICON)if(n.includes(k))return ICON[k];return"🛍️"};
+
+/* Cart */
+const cnt=()=>C.reduce((s,i)=>s+i.qty,0),tot=()=>C.reduce((s,i)=>s+i.price*i.qty,0);
+function upd(){const b=$("#badge"),c=cnt();b.textContent=c;b.style.display=c?"flex":"none"}
+function save(){store.set("riazmart_cart",C);upd()}
+const imgs=p=>{const a=(Array.isArray(p.images)?p.images:[]).filter(Boolean);if(p.image&&!a.includes(p.image))a.unshift(p.image);return a};
+const vids=p=>{const a=(Array.isArray(p.videos)?p.videos:[]).filter(Boolean);if(p.video&&!a.includes(p.video))a.push(p.video);return a};
+const main=p=>imgs(p)[0]||"";
+const find=id=>(D.products||[]).find(x=>String(x.id)===String(id));
+function addCart(p,q=1){const i=C.findIndex(x=>String(x.id)===String(p.id));if(i>=0)C[i].qty+=q;else C.push({id:p.id,name:p.name,price:p.price,image:main(p),qty:q});save()}
+function setQ(id,q){const i=C.findIndex(x=>String(x.id)===String(id));if(i<0)return;if(q<=0)C.splice(i,1);else C[i].qty=q;save();rCart()}
+function rCart(){
+  const b=$("#cB"),f=$("#cF");
+  if(!C.length){b.innerHTML='<div class="em">🛒<br>Your cart is empty</div>';f.style.display="none";return}
+  f.style.display="flex";$("#cT").textContent=mon(tot());
+  b.innerHTML=C.map(i=>`<div class="it">${i.image?`<img src="${esc(i.image)}" alt="" loading="lazy">`:'<div style="width:64px;height:64px;background:#eef1f6;border-radius:8px"></div>'}<div class="ii"><div class="n">${esc(i.name)}</div><div class="ir"><div class="qy"><button type="button" data-act="q" data-id="${esc(i.id)}" data-q="${i.qty-1}" aria-label="Decrease">−</button><span>${i.qty}</span><button type="button" data-act="q" data-id="${esc(i.id)}" data-q="${i.qty+1}" aria-label="Increase">+</button></div><strong>${mon(i.price*i.qty)}</strong></div><button type="button" class="rm" data-act="q" data-id="${esc(i.id)}" data-q="0">Remove</button></div></div>`).join("")
+}
+function openCart(){rCart();$("#dd").classList.remove("open");if(!$("#cartD").open)$("#cartD").showModal()}
+function openCk(){
+  if(!C.length)return;
+  $("#sm").innerHTML=C.map(i=>`<div class="r"><span>${esc(i.name)} × ${i.qty}</span><span>${mon(i.price*i.qty)}</span></div>`).join("")+`<div class="r t"><span>Total</span><span>${mon(tot())}</span></div>`;
+  $("#cartD").close();$("#ckD").showModal()
+}
+const okPh=p=>/^(03\d{9}|923\d{9})$/.test(String(p||"").replace(/\D/g,""));
+function place(e){
+  e.preventDefault();
+  const n=$("#nm").value.trim(),p=$("#ph").value.trim(),c=$("#ct").value.trim(),a=$("#ad").value.trim();
+  if(n.length<2||!okPh(p)||c.length<2||a.length<5){toast("Please fill all fields correctly");return}
+  const wa=(D?.settings?.whatsapp||"923376046968").replace(/\D/g,"");
+  const lines=["*New Order – Riaz Mart*","",`Name: ${n}`,`Phone: ${p}`,`City: ${c}`,`Address: ${a}`,"","*Items:*",...C.map(i=>`• ${i.name} × ${i.qty} = ${mon(i.price*i.qty)}`),"",`*Total: ${mon(tot())}*`,"Payment: COD","Delivery: Free"];
+  window.open(`https://wa.me/${wa}?text=${encodeURIComponent(lines.join("\n"))}`,"_blank");
+  C=[];save();$("#ckD").close();$("#fm").reset();toast("Order sent on WhatsApp")
+}
+
+/* Products */
+function card(p){
+  const d=p.oldPrice&&p.oldPrice>p.price?Math.round((1-p.price/p.oldPrice)*100):0,im=main(p),id=esc(p.id);
+  return `<article class="card"><div class="ci" data-act="quick" data-id="${id}">${im?`<img src="${esc(im)}" alt="${esc(p.name)}" loading="lazy">`:""}${d?`<span class="sale">-${d}%</span>`:""}${vids(p).length?'<span class="tag">▶ Video</span>':""}</div>
+  <div class="cb"><h3 data-act="quick" data-id="${id}">${esc(p.name)}</h3>
+  <div class="price">${mon(p.price)}${d?`<s>${mon(p.oldPrice)}</s>`:""}</div>
+  <div class="cbt"><button class="btn btn-n btn-s" data-act="add" data-id="${id}">Add to Cart</button><button class="btn btn-o btn-s" data-act="order" data-id="${id}">Order Now</button></div></div></article>`
+}
+function reveal(){
+  if(!("IntersectionObserver"in window)){document.querySelectorAll(".card").forEach(c=>c.classList.add("show"));return}
+  if(!obs)obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("show");obs.unobserve(e.target)}}),{threshold:.05});
+  document.querySelectorAll(".card:not(.show)").forEach(c=>obs.observe(c))
+}
+function rProd(){
+  let L=D.products||[];
+  if(F!=="all")L=L.filter(p=>p.collection===F);
+  if(Q){const q=Q.toLowerCase();L=L.filter(p=>(p.name||"").toLowerCase().includes(q)||(p.collection||"").toLowerCase().includes(q))}
+  $("#pTitle").textContent=F!=="all"?F:(Q?`Results for "${Q}"`:"All Products");
+  $("#grid").innerHTML=L.length?L.map(card).join(""):'<div class="no">No products found</div>';
+  document.querySelectorAll(".col").forEach(c=>c.classList.toggle("on",c.dataset.col===F));
+  reveal()
+}
+function rSale(){
+  const s=(D.products||[]).filter(p=>p.oldPrice&&p.oldPrice>p.price);
+  $("#sale").style.display=s.length?"block":"none";
+  $("#saleGrid").innerHTML=s.slice(0,8).map(card).join("")
+}
+function rCols(){
+  const P=D.products||[];
+  $("#cols").innerHTML=(D.collections||[]).map(c=>{
+    const items=P.filter(p=>p.collection===c),im=items.map(main).find(Boolean);
+    return `<div class="col" role="button" tabindex="0" data-act="col" data-col="${esc(c)}"><div class="col-i">${im?`<img src="${esc(im)}" alt="${esc(c)}" loading="lazy">`:icon(c)}</div><h3>${esc(c)}</h3><small>${items.length} items</small></div>`
+  }).join("")
+}
+function rHero(){
+  const im=(D.products||[]).map(main).filter(Boolean).slice(0,3);
+  if(im.length<3)return;
+  $("#art").innerHTML=im.map(u=>`<div><img src="${esc(u)}" alt="" loading="eager"></div>`).join("")+'<div class="stick"><strong>New arrivals</strong>Fresh finds every week</div>'
+}
+function quick(p){
+  const I=imgs(p),V=vids(p);
+  const th=[...I.map((u,i)=>`<button type="button" data-act="media" data-type="image" data-src="${esc(u)}" aria-label="Image ${i+1}"><img src="${esc(u)}" alt=""></button>`),...V.map((u,i)=>`<button type="button" data-act="media" data-type="video" data-src="${esc(u)}">▶ ${i+1}</button>`)].join("");
+  $("#qC").innerHTML=`<div id="qMain">${I[0]?`<img class="qi" src="${esc(I[0])}" alt="${esc(p.name)}">`:""}</div>${I.length+V.length>1?`<div class="qt">${th}</div>`:""}<div class="qb"><h2>${esc(p.name)}</h2><div class="price">${mon(p.price)}${p.oldPrice>p.price?`<s>${mon(p.oldPrice)}</s>`:""}</div><p>${esc(p.description||"")}</p><div class="bt"><button class="btn btn-n btn-f" data-act="add" data-id="${esc(p.id)}">Add to Cart</button><button class="btn btn-o btn-f" data-act="order" data-id="${esc(p.id)}">Order Now</button></div></div>`;
+  $("#qM").showModal()
+}
+function filter(c){F=c;Q="";$("#search").value="";rProd();$("#products").scrollIntoView({behavior:"smooth"})}
+
+function footer(){
+  $("#yr").textContent=new Date().getFullYear();
+  const wa=(D?.settings?.whatsapp||"923376046968").replace(/\D/g,""),u=`https://wa.me/${wa}`;
+  $("#waF").href=u;$("#waB").href=u;
+  const ic={facebook:"f",instagram:"IG",tiktok:"TT",youtube:"▶",telegram:"✈"};
+  $("#socs").innerHTML=Object.entries(D?.settings?.social||{}).filter(([k,v])=>v&&ic[k]).map(([k,v])=>`<a href="${esc(v)}" target="_blank" rel="noopener" aria-label="${k}" style="font-size:12px;font-weight:800">${ic[k]}</a>`).join("")
+}
+
+/* Events */
+document.addEventListener("click",e=>{
+  const ds=$("#dd");if(!e.target.closest(".mw"))ds.classList.remove("open");
+  const cl=e.target.closest("[data-close]");if(cl){$("#"+cl.dataset.close).close();return}
+  const pol=e.target.closest("[data-policy]");if(pol){e.preventDefault();const p=POL[pol.dataset.policy];$("#polTitle").textContent=p[0];$("#polBody").textContent=p[1];$("#polD").showModal();return}
+  if(e.target.matches("dialog")){e.target.close();return}
+  const el=e.target.closest("[data-act]");if(!el||!D)return;
+  const act=el.dataset.act,id=el.dataset.id,p=id?find(id):null;
+  if(act==="add"&&p){addCart(p);$("#qM").open&&$("#qM").close();openCart()}
+  else if(act==="order"&&p){C=[{id:p.id,name:p.name,price:p.price,image:main(p),qty:1}];save();$("#qM").open&&$("#qM").close();openCk()}
+  else if(act==="quick"&&p)quick(p);
+  else if(act==="q")setQ(id,Number(el.dataset.q));
+  else if(act==="cart"){e.preventDefault();openCart()}
+  else if(act==="checkout")openCk();
+  else if(act==="col")filter(el.dataset.col);
+  else if(act==="all"){e.preventDefault();F="all";Q="";$("#search").value="";rProd();$("#products").scrollIntoView({behavior:"smooth"})}
+  else if(act==="media"){const s=el.dataset.src;$("#qMain").innerHTML=el.dataset.type==="video"?`<video class="qi" src="${esc(s)}" controls playsinline></video>`:`<img class="qi" src="${esc(s)}" alt="">`}
+});
+document.addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&e.target.matches(".col")){e.preventDefault();e.target.click()}});
+$("#menuBtn").onclick=e=>{e.stopPropagation();$("#dd").classList.toggle("open")};
+$("#search").oninput=e=>{Q=e.target.value.trim();F="all";if(D)rProd()};
+$("#fm").onsubmit=place;
+
+(async function init(){
+  const items=['<i>🚚</i> Free Delivery Across Pakistan','<i>💵</i> Cash on Delivery','<i>↩️</i> 3-Day Return Policy','<i>💬</i> WhatsApp Support'];
+  $("#track").innerHTML=[...items,...items,...items,...items].map(t=>`<span>${t}</span>`).join("");
+  C=store.get("riazmart_cart")||[];upd();
+  try{const r=await fetch("products.json?t="+Date.now());if(!r.ok)throw 0;D=await r.json()}
+  catch{$("#grid").innerHTML='<div class="no">Could not load products. Please refresh.</div>';return}
+  rHero();rCols();rSale();rProd();footer()
+})();
+})();
+</script>
+</body>
+</html>
