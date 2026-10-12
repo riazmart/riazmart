@@ -29,26 +29,6 @@
   ],
   "products": [
     {
-      "id": "pmv4o2hw2-scuk",
-      "name": "Ye",
-      "collection": "China",
-      "price": 56,
-      "image": "images/p-mv4o2hw1-b0gbby.jpg",
-      "images": [
-        "images/p-mv4o2hw1-b0gbby.jpg",
-        "images/p-mv4o2hw2-7aadd5.jpg",
-        "images/p-mv4o2hw2-rrp1mo.jpg",
-        "images/p-mv4o2hw2-xgjjxt.jpg",
-        "images/p-mv4o2hw2-e8fwly.jpg",
-        "images/p-mv4o2hw2-lbm87p.jpg",
-        "images/p-mv4o2hw2-gk8ucx.jpg",
-        "images/p-mv4o2hw2-5v2m7c.jpg",
-        "images/p-mv4o2hw2-t3e9tg.jpg"
-      ],
-      "oldPrice": 66,
-      "description": "Hfc"
-    },
-    {
       "id": "pmv0g772b",
       "name": "Zafrani Whitening Cream 250g Acne Scar & Brightening",
       "collection": "Health & Personal Care",
