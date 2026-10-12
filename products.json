@@ -29,6 +29,23 @@
   ],
   "products": [
     {
+      "id": "pmv4say12-pm7l",
+      "name": "Silicone Dishwashing Cleaning Gloves (Pair)",
+      "collection": "Home & Kitchen",
+      "price": 899,
+      "image": "images/p-mv4say12-c2dryi.jpg",
+      "images": [
+        "images/p-mv4say12-c2dryi.jpg",
+        "images/p-mv4say12-kl2aj0.jpg",
+        "images/p-mv4say12-bchwnw.jpg",
+        "images/p-mv4say12-9k2912.jpg",
+        "images/p-mv4say12-nt9bkl.jpg",
+        "images/p-mv4say12-xz4l0u.jpg"
+      ],
+      "oldPrice": 1100,
+      "description": "Durable, heat-resistant silicone gloves with built-in scrubbers for easy cleaning. Ideal for dishes, fruits, vegetables, bathrooms, pets, and cars. Reusable, versatile, and easy to clean."
+    },
+    {
       "id": "pmv0g772b",
       "name": "Zafrani Whitening Cream 250g Acne Scar & Brightening",
       "collection": "Health & Personal Care",
