@@ -29,6 +29,20 @@
   ],
   "products": [
     {
+      "id": "pmv7ttc2i-pghd",
+      "name": "Men’s Black Collared Tracksuit Set",
+      "collection": "Men's Collection",
+      "price": 4499,
+      "image": "images/p-mv7ttc2h-zekgft.jpg",
+      "images": [
+        "images/p-mv7ttc2h-zekgft.jpg",
+        "images/p-mv7ttc2i-eybkin.jpg",
+        "images/p-mv7ttc2i-5ay1pd.jpg",
+        "images/p-mv7ttc2i-tdq19i.jpg"
+      ],
+      "description": "Stylish and comfortable men’s tracksuit, perfect for sports and casual wear. Size: 2XL. Free Delivery & 7-Day Easy Returns."
+    },
+    {
       "id": "pmv6elmst-uy83",
       "name": "2-in-1 Glass Oil Dispenser & Spray Bottle (470ml)",
       "collection": "Home & Kitchen",
