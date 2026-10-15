@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Riaz Mart - Orders</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#101d3a;--orange:#f58220;--bg:#f5f6f8;--line:#e5e8ee;--muted:#687386}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:#182338;line-height:1.5;-webkit-font-smoothing:antialiased}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer;border:0;background:0}
+.hide{display:none!important}
+.top{position:sticky;top:0;z-index:20;background:var(--navy);color:#fff;padding:12px 16px;display:flex;align-items:center;gap:10px}
+.top h1{font-size:17px;font-weight:800;flex:1}.top h1 em{font-style:normal;color:var(--orange)}
+.top button{background:rgba(255,255,255,.12);color:#fff;border-radius:8px;padding:7px 12px;font-size:13px;font-weight:600}
+.tabs{display:flex;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:52px;z-index:19}
+.tabs button{flex:1;padding:12px 6px;font-size:14px;font-weight:700;color:var(--muted);border-bottom:3px solid transparent}
+.tabs button.on{color:var(--navy);border-color:var(--orange)}
+.tabs .n{background:var(--orange);color:#fff;border-radius:10px;font-size:11px;padding:1px 7px;margin-left:5px}
+main{max-width:900px;margin:0 auto;padding:14px 14px 60px}
+.login{max-width:380px;margin:60px auto;background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 10px 30px rgba(16,29,58,.08)}
+.login h2{color:var(--navy);margin-bottom:4px}.login p{color:var(--muted);font-size:13px;margin-bottom:14px}
+label{display:block;font-size:12px;font-weight:700;color:var(--navy);margin:10px 0 4px}
+input,select,textarea{width:100%;border:1px solid #dfe3ea;border-radius:10px;padding:10px 12px;font-size:14px;background:#fff}
+textarea{min-height:70px;resize:vertical}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:10px;padding:10px 16px;font-weight:700;font-size:14px;background:var(--orange);color:#fff}
+.btn.full{width:100%;margin-top:14px}.btn.navy{background:var(--navy)}.btn.wa{background:#25d366}.btn.ghost{background:#eef1f6;color:var(--navy)}.btn.sm{padding:7px 12px;font-size:13px}
+.err{color:#c0392b;font-size:13px;margin-top:10px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.stat b{display:block;font-size:22px;color:var(--navy);line-height:1.2}.stat span{font-size:11px;color:var(--muted)}
+.chips{display:flex;gap:6px;overflow-x:auto;padding-bottom:8px;margin-bottom:6px;scrollbar-width:none}
+.chips button{flex:0 0 auto;border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 13px;font-size:13px;font-weight:600;color:var(--muted)}
+.chips button.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:12px;box-shadow:0 4px 14px rgba(16,29,58,.04)}
+.row{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.oid{font-weight:800;color:var(--navy);font-size:16px}
+.tag{font-size:11px;font-weight:700;border-radius:6px;padding:2px 8px;background:#eef1f6;color:var(--navy)}
+.tag.wa{background:#e3f9ec;color:#128c4a}.tag.web{background:#fff1e4;color:#b45a0c}
+.time{font-size:12px;color:var(--muted)}
+.cust{margin:10px 0 6px;font-size:14px}.cust b{font-size:15px}
+.addr{font-size:13px;color:#3d4a60;margin-bottom:8px}
+.items{background:#f5f6f8;border-radius:10px;padding:8px 10px;font-size:13px;margin-bottom:10px}
+.items div{padding:2px 0}
+.tot{font-weight:800;color:var(--navy);font-size:16px}
+.act{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;align-items:center}
+.act select{width:auto;padding:7px 10px;font-weight:700}
+.st-New{border-color:#f58220;color:#b45a0c}.st-Confirmed{border-color:#2f6fed;color:#2f6fed}.st-Shipped{border-color:#8e44ad;color:#8e44ad}.st-Delivered{border-color:#1aa557;color:#1aa557}.st-Cancelled{border-color:#c0392b;color:#c0392b}
+.day{font-size:12px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:16px 0 6px}
+.ev{background:#fff;border:1px solid var(--line);border-radius:10px;padding:9px 12px;margin-bottom:6px;font-size:13px;display:flex;justify-content:space-between;gap:10px;align-items:center}
+.ev small{color:var(--muted);display:block}
+.top5{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin-bottom:12px;font-size:13px}
+.top5 h3{font-size:13px;color:var(--navy);margin-bottom:6px}
+.top5 div{display:flex;justify-content:space-between;padding:2px 0}
+.stars{color:#f5a623;letter-spacing:1px}
+.rv.hidden{opacity:.5}
+.empty{text-align:center;color:var(--muted);padding:34px 10px;font-size:14px}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:var(--navy);color:#fff;padding:10px 16px;border-radius:10px;font-size:13px;font-weight:600;opacity:0;pointer-events:none;transition:.2s;z-index:50}
+.toast.on{opacity:1}
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div class="login" id="login">
+  <h2>Riaz Mart Orders</h2>
+  <p>Owner page. Enter your password to see orders, cart activity and reviews.</p>
+  <form id="lf">
+    <div id="urlBox"><label>Backend link (Apps Script web app URL)</label><input id="lu" placeholder="https://script.google.com/macros/s/.../exec" autocomplete="off"></div>
+    <label>Admin password</label><input id="lk" type="password" autocomplete="current-password" required>
+    <button class="btn full" type="submit" id="lb">Open</button>
+    <div class="err" id="le"></div>
+  </form>
+</div>
+
+<!-- APP -->
+<div id="app" class="hide">
+  <div class="top"><h1>Riaz Mart <em>Orders</em></h1><button id="rf">&#8635; Refresh</button><button id="lo">Logout</button></div>
+  <div class="tabs">
+    <button data-t="orders" class="on">Orders<span class="n hide" id="newN">0</span></button>
+    <button data-t="cart">Cart Activity</button>
+    <button data-t="rev">Reviews</button>
+  </div>
+  <main>
+    <section id="tOrders">
+      <div class="stats" id="oStats"></div>
+      <div class="chips" id="chips"></div>
+      <div id="oList"><div class="empty">Loading...</div></div>
+    </section>
+    <section id="tCart" class="hide">
+      <div class="stats" id="cStats"></div>
+      <div id="cTop"></div>
+      <div id="cList"><div class="empty">Loading...</div></div>
+    </section>
+    <section id="tRev" class="hide">
+      <div class="card">
+        <strong style="color:var(--navy)">Add a review</strong>
+        <label>Product</label><select id="rp"></select>
+        <label>Name</label><input id="rn" maxlength="40" placeholder="Customer name">
+        <label>Rating</label><select id="rr"><option>5</option><option>4</option><option>3</option><option>2</option><option>1</option></select>
+        <label>Review</label><textarea id="rt" maxlength="600" placeholder="Review text"></textarea>
+        <button class="btn full" id="ra" type="button">Add review</button>
+      </div>
+      <div id="rList"><div class="empty">Loading...</div></div>
+    </section>
+  </main>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+/* Paste your Apps Script web app link here (or leave empty and paste it on the login screen once) */
+const BACKEND_URL="";
+
+const $=s=>document.querySelector(s);
+const esc=s=>String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;");
+const ls={get(k){try{return localStorage.getItem(k)||""}catch{return""}},set(k,v){try{localStorage.setItem(k,v)}catch{}},del(k){try{localStorage.removeItem(k)}catch{}}};
+const mon=n=>"Rs."+Number(n||0).toLocaleString("en-US");
+const STATUSES=["New","Confirmed","Shipped","Delivered","Cancelled"];
+let URLX=BACKEND_URL||ls.get("rm_ord_url"),KEY=ls.get("rm_ord_key");
+let ORD=[],EVT=[],RVW=[],PRODS=[],FILTER="All",TAB="orders",timer=null,lastNew=-1;
+
+function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove("on"),2200)}
+async function api(body){
+  const r=await fetch(URLX,{method:"POST",body:JSON.stringify({action:"admin",key:KEY,...body})});
+  return r.json()
+}
+const fdate=t=>t?new Date(t).toLocaleString("en-GB",{day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"}):"";
+const dayKey=t=>new Date(t).toDateString();
+const isToday=t=>dayKey(t)===new Date().toDateString();
+const waNum=p=>{const d=String(p||"").replace(/\D/g,"");return d.startsWith("0")?"92"+d.slice(1):d};
+
+/* ---------- login ---------- */
+$("#urlBox").classList.toggle("hide",!!BACKEND_URL);
+$("#lu").value=ls.get("rm_ord_url");
+$("#lf").onsubmit=async e=>{
+  e.preventDefault();
+  URLX=(BACKEND_URL||$("#lu").value.trim());KEY=$("#lk").value;
+  $("#le").textContent="";
+  if(!/^https:\/\/script\.google\.com\//.test(URLX)){$("#le").textContent="Please paste the backend link (starts with https://script.google.com/...).";return}
+  const b=$("#lb");b.disabled=true;b.textContent="Checking...";
+  try{
+    const j=await api({op:"orders"});
+    if(!j.ok){$("#le").textContent=j.error==="auth"?"Wrong password. (Also check that you changed ADMIN_KEY in the script and deployed the new version.)":"Server said: "+(j.error||"error");return}
+    ls.set("rm_ord_url",URLX);ls.set("rm_ord_key",KEY);
+    start(j.orders)
+  }catch(err){$("#le").textContent="Could not connect. Check the link and that access is set to Anyone."}
+  finally{b.disabled=false;b.textContent="Open"}
+};
+$("#lo").onclick=()=>{ls.del("rm_ord_key");clearInterval(timer);location.reload()};
+
+function start(orders){
+  $("#login").classList.add("hide");$("#app").classList.remove("hide");
+  ORD=orders||[];renderOrders();
+  loadProducts();
+  clearInterval(timer);timer=setInterval(()=>refresh(true),45000)
+}
+async function loadProducts(){
+  try{const r=await fetch("products.json?t="+Date.now());const d=await r.json();PRODS=d.products||[]}catch{PRODS=[]}
+  $("#rp").innerHTML=PRODS.map(p=>`<option value="${esc(p.id)}">${esc(p.name)}</option>`).join("")||'<option value="">(products.json not found)</option>'
+}
+
+/* ---------- tabs ---------- */
+document.querySelectorAll(".tabs button").forEach(b=>b.onclick=()=>{
+  TAB=b.dataset.t;
+  document.querySelectorAll(".tabs button").forEach(x=>x.classList.toggle("on",x===b));
+  $("#tOrders").classList.toggle("hide",TAB!=="orders");$("#tCart").classList.toggle("hide",TAB!=="cart");$("#tRev").classList.toggle("hide",TAB!=="rev");
+  refresh(false)
+});
+$("#rf").onclick=()=>refresh(false);
+async function refresh(quiet){
+  try{
+    if(TAB==="orders"){const j=await api({op:"orders"});if(j.ok){ORD=j.orders;renderOrders(quiet)}else if(j.error==="auth")$("#lo").click()}
+    else if(TAB==="cart"){const j=await api({op:"cart"});if(j.ok){EVT=j.events;renderCart()}}
+    else{const j=await api({op:"reviews"});if(j.ok){RVW=j.reviews;renderReviews()}}
+    if(!quiet)toast("Updated")
+  }catch{if(!quiet)toast("Could not refresh")}
+}
+
+/* ---------- orders ---------- */
+function renderOrders(quiet){
+  const nNew=ORD.filter(o=>o.status==="New").length;
+  const n=$("#newN");n.textContent=nNew;n.classList.toggle("hide",!nNew);
+  document.title=(nNew?"("+nNew+") ":"")+"Riaz Mart - Orders";
+  if(quiet&&lastNew>=0&&nNew>lastNew)toast("New order received!");
+  lastNew=nNew;
+  const today=ORD.filter(o=>isToday(o.t)),sum=today.reduce((s,o)=>s+(o.status==="Cancelled"?0:o.total),0);
+  $("#oStats").innerHTML=`<div class="stat"><b>${nNew}</b><span>New orders</span></div><div class="stat"><b>${today.length}</b><span>Orders today</span></div><div class="stat"><b>${mon(sum)}</b><span>Sales today</span></div>`;
+  $("#chips").innerHTML=["All",...STATUSES].map(s=>`<button class="${FILTER===s?"on":""}" data-s="${s}">${s}${s==="All"?"":" ("+ORD.filter(o=>o.status===s).length+")"}</button>`).join("");
+  $("#chips").querySelectorAll("button").forEach(b=>b.onclick=()=>{FILTER=b.dataset.s;renderOrders()});
+  const L=ORD.filter(o=>FILTER==="All"||o.status===FILTER);
+  $("#oList").innerHTML=L.length?L.map(o=>`<div class="card">
+    <div class="row"><span class="oid">${esc(o.id)}</span><span><span class="tag ${o.channel==="WhatsApp"?"wa":"web"}">${esc(o.channel)}</span></span></div>
+    <div class="time">${fdate(o.t)}</div>
+    <div class="cust"><b>${esc(o.name)}</b> &middot; ${esc(o.phone)} &middot; ${esc(o.city)}</div>
+    <div class="addr">${esc(o.address)}</div>
+    <div class="items">${esc(o.items).split(" | ").map(x=>"<div>"+x+"</div>").join("")}</div>
+    <div class="row"><span class="tot">${mon(o.total)} <span style="font-size:12px;font-weight:600;color:var(--muted)">COD</span></span></div>
+    <div class="act">
+      <select class="st-${esc(o.status)}" data-id="${esc(o.id)}">${STATUSES.map(s=>`<option${s===o.status?" selected":""}>${s}</option>`).join("")}</select>
+      <a class="btn sm navy" href="tel:${esc(o.phone)}">Call</a>
+      <a class="btn sm wa" target="_blank" rel="noopener" href="https://wa.me/${waNum(o.phone)}?text=${encodeURIComponent("Assalam o Alaikum "+o.name+", this is Riaz Mart about your order "+o.id+".")}">WhatsApp</a>
+    </div></div>`).join(""):'<div class="empty">No orders here yet.</div>';
+  $("#oList").querySelectorAll("select[data-id]").forEach(s=>s.onchange=async()=>{
+    const id=s.dataset.id,st=s.value,prev=ORD.find(o=>o.id===id);
+    s.disabled=true;
+    try{const j=await api({op:"setStatus",id,status:st});if(!j.ok)throw 0;if(prev)prev.status=st;toast(id+" → "+st);renderOrders()}
+    catch{toast("Could not change status");renderOrders()}
+  })
+}
+
+/* ---------- cart activity ---------- */
+function renderCart(){
+  const td=EVT.filter(e=>isToday(e.t)),vis=new Set(td.map(e=>e.vid));
+  $("#cStats").innerHTML=`<div class="stat"><b>${td.filter(e=>e.type==="add_to_cart").length}</b><span>Add to cart today</span></div><div class="stat"><b>${td.filter(e=>e.type==="order_now").length}</b><span>Order Now today</span></div><div class="stat"><b>${vis.size}</b><span>Visitors today</span></div>`;
+  const cnt={};EVT.forEach(e=>{cnt[e.name]=(cnt[e.name]||0)+e.qty});
+  const top=Object.entries(cnt).sort((a,b)=>b[1]-a[1]).slice(0,5);
+  $("#cTop").innerHTML=top.length?`<div class="top5"><h3>Most added products</h3>${top.map(([n,c])=>`<div><span>${esc(n)}</span><b>${c}</b></div>`).join("")}</div>`:"";
+  if(!EVT.length){$("#cList").innerHTML='<div class="empty">No cart activity yet.</div>';return}
+  let day="",h="";
+  EVT.forEach(e=>{
+    const d=dayKey(e.t);if(d!==day){day=d;h+=`<div class="day">${isToday(e.t)?"Today":esc(new Date(e.t).toLocaleDateString("en-GB",{weekday:"short",day:"numeric",month:"short"}))}</div>`}
+    h+=`<div class="ev"><div><b>${esc(e.name)}</b> &times; ${e.qty}<small>${new Date(e.t).toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit"})} &middot; visitor ${esc(e.vid.slice(0,6))}</small></div><div style="text-align:right"><span class="tag ${e.type==="order_now"?"web":""}">${e.type==="order_now"?"Order Now":"Add to cart"}</span><small>${mon(e.price*e.qty)}</small></div></div>`
+  });
+  $("#cList").innerHTML=h
+}
+
+/* ---------- reviews ---------- */
+const stars=n=>"★".repeat(n)+"☆".repeat(5-n);
+function renderReviews(){
+  $("#rList").innerHTML=RVW.length?RVW.map(r=>{
+    const p=PRODS.find(x=>String(x.id)===String(r.pid)),hid=String(r.status).toLowerCase()==="hidden";
+    return `<div class="card rv ${hid?"hidden":""}"><div class="row"><b>${esc(r.name)}</b><span class="stars">${stars(r.rating)}</span></div>
+    <div style="font-size:14px;margin:6px 0;white-space:pre-wrap">${esc(r.text)}</div>
+    <div class="row"><span class="time">${fdate(r.t)} &middot; ${esc(p?p.name:"Product "+r.pid).slice(0,40)}</span>
+    <button class="btn sm ghost" data-row="${r.row}" data-h="${hid?0:1}">${hid?"Show":"Hide"}</button></div></div>`}).join(""):'<div class="empty">No reviews yet.</div>';
+  $("#rList").querySelectorAll("button[data-row]").forEach(b=>b.onclick=async()=>{
+    try{const j=await api({op:"hideReview",row:b.dataset.row,hidden:b.dataset.h==="1"});if(!j.ok)throw 0;toast(b.dataset.h==="1"?"Review hidden":"Review shown");refresh(true)}catch{toast("Could not update")}
+  })
+}
+$("#ra").onclick=async()=>{
+  const pid=$("#rp").value,name=$("#rn").value.trim(),text=$("#rt").value.trim(),rating=+$("#rr").value;
+  if(!pid||!name||!text){toast("Fill product, name and review");return}
+  const b=$("#ra");b.disabled=true;
+  try{const j=await api({op:"addReview",pid,name,text,rating});if(!j.ok)throw 0;$("#rn").value="";$("#rt").value="";toast("Review added - visible to everyone");refresh(true)}
+  catch{toast("Could not add review")}
+  finally{b.disabled=false}
+};
+
+/* ---------- auto login if saved ---------- */
+(async()=>{
+  if(!URLX||!KEY)return;
+  try{const j=await api({op:"orders"});if(j.ok)start(j.orders)}catch{}
+})();
+</script>
+</body>
+</html>
