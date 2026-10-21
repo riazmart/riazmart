@@ -29,6 +29,21 @@
   ],
   "products": [
     {
+      "id": "pmvhkn5tf-e12b",
+      "name": "Baby Hooded Sleeping Bag with Animal Ears, Fleece Material",
+      "collection": "Kids Collection",
+      "price": 2999,
+      "image": "images/p-mvhkn5tf-phwbfg.jpg",
+      "images": [
+        "images/p-mvhkn5tf-phwbfg.jpg",
+        "images/p-mvhkn5tf-m571oi.jpg",
+        "images/p-mvhkn5tf-gauruj.jpg",
+        "images/p-mvhkn5tf-0d1yvc.jpg",
+        "images/p-mvhkn5tf-g3ozp3.jpg"
+      ],
+      "description": "•  Type: Bag\n•  Detail: Hooded\n•  Season: Autumn\n•  Target: Children"
+    },
+    {
       "id": "pmvhkik15-vg55",
       "name": "Newborn Rabbit Hooded Pink Winter Jumpsuit for Baby",
       "collection": "Kids Collection",
