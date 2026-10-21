@@ -33,8 +33,13 @@
       "name": "Kids Lightweight Summer Shoes",
       "collection": "Kids Collection",
       "price": 3240,
-      "image": "",
-      "images": [],
+      "image": "images/p-mvhluq86-l5igkq.jpg",
+      "images": [
+        "images/p-mvhluq86-l5igkq.jpg",
+        "images/p-mvhluq86-gh7l1o.jpg",
+        "images/p-mvhluq86-jb1qgk.jpg",
+        "images/p-mvhluq86-8yfu4d.jpg"
+      ],
       "description": "•  Material: Mesh\n•  Season: Summer\n•  Target: Children/Kids\n•  Type: Footwear/Shoes\n•  Style: Casual\n•  Condition: Latest/New Collection"
     },
     {
