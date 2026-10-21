@@ -29,6 +29,20 @@
   ],
   "products": [
     {
+      "id": "pmvhl10re-ba3j",
+      "name": "Rose Gold Flower Pendant Necklace for Women",
+      "collection": "Women's Collection",
+      "price": 1250,
+      "image": "images/p-mvhl10re-7by9o5.jpg",
+      "images": [
+        "images/p-mvhl10re-7by9o5.jpg",
+        "images/p-mvhl10re-b9kml4.jpg",
+        "images/p-mvhl10re-9f8de4.jpg",
+        "images/p-mvhl10re-oycrr7.jpg"
+      ],
+      "description": "•  Type: Fashion & Accessories\n•  Material: Lace\n•  Color: Pink\n•  Gender: Women"
+    },
+    {
       "id": "pmvhktxfi-g90u",
       "name": "​Baby Reusable Washable Diapers",
       "collection": "Kids Collection",
