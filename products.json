@@ -29,6 +29,20 @@
   ],
   "products": [
     {
+      "id": "pmvhl4tp1-w8be",
+      "name": "Silver Plated Four Leaf Clover Bracelet for Women",
+      "collection": "Women's Collection",
+      "price": 1499,
+      "image": "images/p-mvhl4tp1-m3dgp5.jpg",
+      "images": [
+        "images/p-mvhl4tp1-m3dgp5.jpg",
+        "images/p-mvhl4tp1-bz5rhm.jpg",
+        "images/p-mvhl4tp1-3v3k29.jpg",
+        "images/p-mvhl4tp1-8ho26o.jpg"
+      ],
+      "description": "•  Type: Fashion & Accessories\n•  Color: Silver\n•  Style: Korean\n•  Gender: Women"
+    },
+    {
       "id": "pmvhl10re-ba3j",
       "name": "Rose Gold Flower Pendant Necklace for Women",
       "collection": "Women's Collection",
