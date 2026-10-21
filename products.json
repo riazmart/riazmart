@@ -29,6 +29,21 @@
   ],
   "products": [
     {
+      "id": "pmvhk9ucz-sp06",
+      "name": "Men Fleece Stitched Hoodie Olive Tan Black Winter",
+      "collection": "Men's Collection",
+      "price": 1999,
+      "image": "images/p-mvhk9ucz-n3w2pp.jpg",
+      "images": [
+        "images/p-mvhk9ucz-n3w2pp.jpg",
+        "images/p-mvhk9ucz-kn4ni2.jpg",
+        "images/p-mvhk9ucz-g4mcmy.jpg",
+        "images/p-mvhk9ucz-m58iz4.jpg",
+        "images/p-mvhk9ucz-t0bbrh.jpg"
+      ],
+      "description": "•  Material: Fleece\n•  Season: Winter\n•  Type: Sweater/Pullover\n•  Style: Casual\n•  Occasion: Sports/Active"
+    },
+    {
       "id": "pmvhk0y3q-v203",
       "name": "Pink Flannel Warm Winter Loungewear Suit for Womenor",
       "collection": "Women's Collection",
