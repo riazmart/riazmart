@@ -29,6 +29,19 @@
   ],
   "products": [
     {
+      "id": "pmvkdjp6d-0jgk",
+      "name": "USB Moon Lamp – 7 Color Changing LED Light A",
+      "collection": "Electronics & Gadgets",
+      "price": 1550,
+      "image": "images/p-mvkdjp6d-tsvoih.jpg",
+      "images": [
+        "images/p-mvkdjp6d-tsvoih.jpg",
+        "images/p-mvkdjp6d-yczgqg.jpg",
+        "images/p-mvkdjp6d-z6hw3y.jpg"
+      ],
+      "description": "Create a relaxing atmosphere with this USB Moon Lamp featuring 7 beautiful changing LED colors. Perfect for bedrooms, desks, and home décor. A stylish night light and a lovely gift for any occasion."
+    },
+    {
       "id": "pmvhlswow-60tj",
       "name": "Kids Lightweight Summer Shoes",
       "collection": "Kids Collection",
