@@ -29,6 +29,17 @@
   ],
   "products": [
     {
+      "id": "pmvn8p4lu-dao2",
+      "name": "Yes",
+      "collection": "Home & Kitchen",
+      "price": 2583,
+      "image": "images/p-mvn8p4lu-l0yxv8.jpg",
+      "images": [
+        "images/p-mvn8p4lu-l0yxv8.jpg"
+      ],
+      "description": "Hgjg"
+    },
+    {
       "id": "pmvkdjp6d-0jgk",
       "name": "USB Moon Lamp – 7 Color Changing LED Light A",
       "collection": "Electronics & Gadgets",
